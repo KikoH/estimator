@@ -5,7 +5,7 @@ body {
 }
 
 #main-container {
-	width: 92%;
+	width: 95%;
 	margin: auto;
 	text-align: center;
 }
@@ -21,30 +21,33 @@ body {
 }
 
 .feature-container {
-	width: 90%;
-	padding: 2%;
+	width: 98%;
+	padding: 5%;
 	margin: auto;
 	background: white;
 	text-align: center;
-}
-
-.nav-tabs>li.active a.web, .nav-tabs>li.active a.web:focus, .nav-tabs>li.active a.web:hover, .web {
-	background-color: #4FC7FF !important;
-	border: #4FC7FF !important;
 }
 
 .tabheight {
 	height: 135px;
 }
 
+.nav-tabs>li.active a.web, .nav-tabs>li.active a.web:focus, .nav-tabs>li.active a.web:hover, .web {
+	background-color: #4FC7FF !important;
+	border: #4FC7FF !important;
+	color: white;
+}
+
 .nav-tabs>li a.ios, .nav-tabs>li a.ios:focus, .nav-tabs>li a.ios:hover, .ios {
 	background-color: #F4D03F !important;
 	border: #F4D03F !important;
+	color: white;
 }
 
 .nav-tabs>li a.android, .nav-tabs>li a.android:focus, .nav-tabs>li a.android:hover, .android {
 	background-color: #03C9A9 !important;
 	border: #03C9A9 !important;
+	color: white;
 }
 
 .nav-tabs > li > a {
@@ -57,4 +60,28 @@ body {
 
 .col-md-4 img {
 	width: 100%;
+	padding-bottom: 30px;
+}
+
+
+.tabtitle {
+	color: white;
+	display: inline;
+}
+
+.tabdescription {
+	color: white;
+	font-size: 1.2em;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+}
+
+.sectionheader {
+	color: black;
+	padding-bottom: 30px;
+}
+
+.sectiontitle {
+	color: black;
+	padding-bottom: 30px;
 }
