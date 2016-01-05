@@ -5,7 +5,7 @@ body {
 }
 
 #main-container {
-	width: 90%;
+	width: 92%;
 	margin: auto;
 	text-align: center;
 }
@@ -29,8 +29,8 @@ body {
 }
 
 .nav-tabs>li.active a.web, .nav-tabs>li.active a.web:focus, .nav-tabs>li.active a.web:hover, .web {
-	background-color: cyan !important;
-	border-bottom-color: cyan !important;
+	background-color: #4FC7FF !important;
+	border: #4FC7FF !important;
 }
 
 .tabheight {
@@ -38,15 +38,22 @@ body {
 }
 
 .nav-tabs>li a.ios, .nav-tabs>li a.ios:focus, .nav-tabs>li a.ios:hover, .ios {
-	background-color: yellow !important;
-	border-bottom-color: yellow !important;
+	background-color: #F4D03F !important;
+	border: #F4D03F !important;
 }
 
 .nav-tabs>li a.android, .nav-tabs>li a.android:focus, .nav-tabs>li a.android:hover, .android {
-	background-color: green !important;
-	border-bottom-color: green !important;
+	background-color: #03C9A9 !important;
+	border: #03C9A9 !important;
 }
 
+.nav-tabs > li > a {
+	margin-right: 0;
+}
+
+.nav-tabs > li {
+	width: 33.3333333333333333%;
+}
 
 .col-md-4 img {
 	width: 100%;
