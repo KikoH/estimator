@@ -1,0 +1,53 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#main-container {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+
+#main-container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.tab-pane {
+	padding: 50px;
+}
+
+.feature-container {
+	width: 90%;
+	padding: 2%;
+	margin: auto;
+	background: white;
+	text-align: center;
+}
+
+.nav-tabs>li.active a.web, .nav-tabs>li.active a.web:focus, .nav-tabs>li.active a.web:hover, .web {
+	background-color: cyan !important;
+	border-bottom-color: cyan !important;
+}
+
+.tabheight {
+	height: 135px;
+}
+
+.nav-tabs>li a.ios, .nav-tabs>li a.ios:focus, .nav-tabs>li a.ios:hover, .ios {
+	background-color: yellow !important;
+	border-bottom-color: yellow !important;
+}
+
+.nav-tabs>li a.android, .nav-tabs>li a.android:focus, .nav-tabs>li a.android:hover, .android {
+	background-color: green !important;
+	border-bottom-color: green !important;
+}
+
+
+.col-md-4 img {
+	width: 100%;
+}
