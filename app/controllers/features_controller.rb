@@ -1,6 +1,7 @@
 class FeaturesController < ApplicationController
 	def index
 		@features = Feature.all
+		@uifeatures = Uifeature.all
 	end
 
 	def new

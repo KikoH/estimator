@@ -3,7 +3,7 @@ var lastBigTitle;
 var lastBigTitlePrice = 0;
 
 var lastTitle;
-var lastTitlePrice;
+var lastTitlePrice = 0;
 
 $(document).ready(function() {
 	$('.test').click(function (event) {
@@ -31,7 +31,7 @@ function addPrice2(title, price) {
 	if (title === lastTitle) {
 		alert("Do nothing");
 	}else {
-		// total -= lastTitlePrice;
+		total -= lastTitlePrice;
 		total += price;
 		alert(total);
 	}

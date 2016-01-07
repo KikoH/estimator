@@ -64,12 +64,11 @@
 				<h1 class="sectionheader">2. What level of UI would you like?</h1>
 
 				<div class="row">
-					<% @features.each do |feature| %>
+					<% @uifeatures.each do |uifeature| %>
 					<div class="col-md-4">
-						<p class="sectiontitle"> <%= feature.title %> </p>
-						<p style="color:black;" class="total">0</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png" alt="" class="img-circle">
-						<%= link_to feature.price, '#', :class => "test", :onclick => "addPrice2('snake', #{feature.price})" %>
+						<p class="sectiontitle"> <%= uifeature.title %> </p>
+						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png" alt="" class="img-circle checkmark">
+						<%= link_to uifeature.price, '#', :class => "test", :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
 					</div>
 					<% end %>
 				</div>
@@ -161,5 +160,7 @@
 			</div>
 		</div>
 	</div>
+
+	<p style="color:black;" class="total">0</p>
 </div>
 
