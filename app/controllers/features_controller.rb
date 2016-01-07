@@ -21,9 +21,9 @@ class FeaturesController < ApplicationController
 	end
 
 	def update
-		@feature =  Painting.find(params[:id])
+		@feature =  Feature.find(params[:id])
 		@feature.update_attributes(feature_params)
-		redirect_to feature_path(@feature)
+		redirect_to features_path
 	end
 
 	def destroy

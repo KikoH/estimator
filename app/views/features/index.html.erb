@@ -18,42 +18,45 @@
 		</li>
 		<li role="presentation">
 			<a href="#ios" aria-controls="ios" class="ios tabheight" role="tab" data-toggle="tab">
-				<i class="fa fa-desktop fa-2x"></i>
+				<i class="fa fa-apple fa-2x"></i>
 				<h3 class="tabtitle">iOS</h3>
 				<p class="tabdescription">An iPhone/iPad app <br> (Excluding back-end)</p>
 			</a>
 		</li>
 		<li role="presentation">
 			<a href="#android" aria-controls="android" class="android tabheight" role="tab" data-toggle="tab">
-				<i class="fa fa-desktop fa-2x"></i>
+				<i class="fa fa-android fa-2x"></i>
 				<h3 class="tabtitle">Android</h3>
 				<p class="tabdescription">An Android Phone/Tablet app <br> (Excluding back-end)</p>
 			</a>
 		</li>
 	</ul>
-
+	
 	<!-- Tab panes -->
 	<div class="tab-content">
 
-	<!-- Web section -->
+		<!-- Web section -->
 
 		<div role="tabpanel" class="tab-pane active web" id="web">
 			<div class="feature-container">
 				<h1 class="sectionheader">1. How big is your app?</h1>
 
 				<div class="row">
+					<% @features.each do |feature| %>
 					<div class="col-md-4">
-						<p class="sectiontitle">Small</p>
+						<p class="sectiontitle"> <%= feature.title %> </p>
 						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png" alt="" class="img-circle">
+						<%= link_to feature.price, '#',:class => "test", :onclick => "addPrice('#{feature.title}', #{feature.price})"%>
 					</div>
-					<div class="col-md-4">
+					<% end %>
+					<!-- <div class="col-md-4">
 						<p class="sectiontitle">Medium</p>
 						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/medium@2x-3f73284910e08d5750e163b0a57ba1e2950428883a8b4e7e9b0a84222769046e.png" alt="" class="img-circle">
 					</div>
 					<div class="col-md-4">
 						<p class="sectiontitle">Large</p>
 						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/large@2x-c7fc2c376674be4b7afabc7292144218c991c7c2e1b7a126d0040e607db43da5.png" alt="" class="img-circle">
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -61,22 +64,18 @@
 				<h1 class="sectionheader">2. What level of UI would you like?</h1>
 
 				<div class="row">
+					<% @features.each do |feature| %>
 					<div class="col-md-4">
-						<p class="sectiontitle">MVP</p>
+						<p class="sectiontitle"> <%= feature.title %> </p>
+						<p style="color:black;" class="total">0</p>
 						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png" alt="" class="img-circle">
+						<%= link_to feature.price, '#', :class => "test", :onclick => "addPrice2('snake', #{feature.price})" %>
 					</div>
-					<div class="col-md-4">
-						<p class="sectiontitle">Basic</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/basic@2x-1b2b2488069b31b0f0dbc2a74f2e9db36e60f47009473bdcb42001c369e4549c.png" alt="" class="img-circle">
-					</div>
-					<div class="col-md-4">
-						<p class="sectiontitle">Polished</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/polished@2x-4f3e2b9c22e6351d650d650bd5e8c75b7db7c286f5195cd2fa75a76fe569aa7e.png" alt="" class="img-circle">
-					</div>
+					<% end %>
 				</div>
 			</div>
 
-			<div class="feature-container">
+			<!-- <div class="feature-container">
 				<h1 class="sectionheader">2. Users & Accounts</h1>
 
 				<div class="row">
@@ -113,9 +112,9 @@
 						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/custom_domains@2x-988309aebe6e4091c5a7ca5b1dff052fe027ea7764ddde8448082123c140e3e7.png" alt="" class="img-circle">
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
-
+		
 		<!-- iOS Section -->
 		<div role="tabpanel" class="tab-pane ios" id="ios">
 			<div class="feature-container">
