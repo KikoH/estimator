@@ -1,4 +1,5 @@
 var total = 0;
+
 var lastBigTitle;
 var lastBigTitlePrice = 0;
 
@@ -6,10 +7,8 @@ var lastTitle;
 var lastTitlePrice = 0;
 
 $(document).ready(function() {
-	$('.test').click(function (event) {
+	$('.img-circle').click(function (event) {
 		event.preventDefault();
-
-		$('.total').text(total);
 	});
 });
 
@@ -24,6 +23,7 @@ function addPrice(title, price) {
 	}
 	lastBigTitle = title;
 	lastBigTitlePrice = price;
+	updatePrice();
 };
 
 function addPrice2(title, price) {
@@ -37,4 +37,9 @@ function addPrice2(title, price) {
 	}
 	lastTitle = title;
 	lastTitlePrice = price;
+	updatePrice();
+};
+
+function updatePrice() {
+	$('.total').text(total);
 };
