@@ -10,7 +10,33 @@ $(document).ready(function() {
 	$('.img-circle').click(function (event) {
 		event.preventDefault();
 	});
+
+	if ($(window).width() < 750) {
+		$('.bottomios').hide();
+		$('.bottomandroid').hide();
+	}
+
+	$('.nav-tabs a').click(function(){
+		var className = this.className;
+		hideTab(className);
+	});
 });
+
+function hideTab(tab) {
+	if (tab === 'web') {
+		$('.bottomweb').show();
+		$('.bottomios').hide();
+		$('.bottomandroid').hide();
+	}else if (tab === 'ios'){
+		$('.bottomios').show();
+		$('.bottomweb').hide();
+		$('.bottomandroid').hide();
+	}else if (tab === 'android'){
+		$('.bottomandroid').show();
+		$('.bottomios').hide();
+		$('.bottomweb').hide();
+	}
+}
 
 function addPrice(title, price) {
 	console.log("first"+ title);
@@ -43,3 +69,17 @@ function addPrice2(title, price) {
 function updatePrice() {
 	$('.total').text(total);
 };
+
+// On resizing hide and show the bottom tab depending on screen size
+$(window).resize(function() {
+	if ($(window).width() < 750) {
+		$('.bottomios').hide();
+		$('.bottomandroid').hide();
+	}
+	else {
+		$('.bottomios').show();
+		$('.bottomandroid').show();
+		$('.bottomweb').show();
+	}
+});
+

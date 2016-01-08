@@ -16,10 +16,12 @@ body {
 	clear: both;
 }
 
+/* Container holding all feature sections*/
 .tab-pane {
 	padding: 50px;
 }
 
+/*Each individual feature container*/
 .feature-container {
 	width: 98%;
 	padding: 5%;
@@ -29,30 +31,47 @@ body {
 	margin-bottom: 60px;
 }
 
-.tabheight {
-	height: 135px;
+.toptab {
+	li {
+		width: 33.3333333333%;
+	}
+
+	a {
+		height: 135px;
+	}
 }
 
-.bottomtab {
-	height: 260px;
+.toptabheader {
+	color: white;
+	display: inline;
+	font-size: 25px;
+	h3 {
+		display: inline;
+	}
 }
 
-.nav-bottom > li > a{
-	padding: 70px 10px;
+.toptabdescription {
+	color: white;
+	font-size: 17px;
+	margin-bottom: 10px;
+	padding: 10px 20px;
 }
 
+/*Nav li's and a's for web tab*/
 .nav-tabs>li.active a.web, .nav-tabs>li.active a.web:focus, .nav-tabs>li.active a.web:hover, .web {
 	background-color: #4FC7FF !important;
 	border: #4FC7FF !important;
 	color: white;
 }
 
+/*Nav li's and a's for ios tab*/
 .nav-tabs>li a.ios, .nav-tabs>li a.ios:focus, .nav-tabs>li a.ios:hover, .ios {
 	background-color: #F4D03F !important;
 	border: #F4D03F !important;
 	color: white;
 }
 
+/*Nav li's and a's for android tab*/
 .nav-tabs>li a.android, .nav-tabs>li a.android:focus, .nav-tabs>li a.android:hover, .android {
 	background-color: #03C9A9 !important;
 	border: #03C9A9 !important;
@@ -64,9 +83,6 @@ body {
 	border-radius: inherit;
 }
 
-.nav-tabs > li {
-	width: 33.3333333333333333%;
-}
 
 .col-xs-12 img, .col-sm-12 img, .col-md-3 img, .col-md-4 img {
 	width: 100%;
@@ -74,23 +90,6 @@ body {
 
 .col-md-3, .col-md-4 {
 	padding-bottom: 30px;
-}
-
-
-.tabheader {
-	color: white;
-	display: inline;
-	font-size: 25px;
-	h3 {
-		display: inline;
-	}
-}
-
-.tabdescription {
-	color: white;
-	font-size: 17px;
-	margin-bottom: 10px;
-	padding: 10px 20px;
 }
 
 .featureheader {
@@ -101,6 +100,10 @@ body {
 .featurecontent {
 	color: black;
 	padding-bottom: 30px;
+}
+
+.nav-bottom > li > a{
+	padding: 70px 10px;
 }
 
 .totalcost {
@@ -125,24 +128,47 @@ body {
 	text-align: center;
 }
 
-/*  RESPONSIVE DESIGN   */
+.nav-bottom {
+	li {
+		width: 33.33333333%;
+	} 
 
+	a {
+		height: 260px;
+	}
+}
+
+.nav-bottomicon {
+	display: none;
+}
+/*  RESPONSIVE DESIGN   */
+@media screen and (min-width: 992px){
+	#main-container {
+		width: 970px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	#main-container {
+		width: 1170px;
+	}
+}
 @media screen and (max-width: 992px) {
 	.main-container {
 		width: 760px;
 	}
 
 	.tab-pane {
-		padding: 20px;
+		padding: 10px;
 	}
 
-	.tabheader {
+	.toptabheader {
 		h3 {
 			font-size: 0.5em;
 		}
 	}
 
-	.tabdescription {
+	.toptabdescription {
 		padding: 10px 10px;
 		p {
 			font-size: 0.6em;
@@ -157,6 +183,8 @@ body {
 
 	.feature-container {
 		width: 100%;
+		padding: 8%;
+		margin-bottom: 20px;
 	}
 
 	.feature {
@@ -195,3 +223,23 @@ body {
 	}
 }
 
+@media screen and (max-width: 765px) {
+	.nav-bottomicon {
+		display: block;
+
+		li {
+			width: 33.333333333%;
+		}
+	}
+
+	.nav-bottom {
+		li {
+			width: 100%;
+			height: 100%;
+		}
+
+		a {
+			height: 260px;
+		}
+	}
+}
