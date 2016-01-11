@@ -129,7 +129,7 @@ body {
 }
 
 .popover.bottom > .arrow:after {
-		border-bottom-color: #434A54;
+	border-bottom-color: #434A54;
 }
 
 .nav-bottom > li > a{
@@ -150,6 +150,10 @@ body {
 }
 
 .mobile-img { 
+	display: none;
+}
+
+.mobile-p {
 	display: none;
 }
 
@@ -229,6 +233,10 @@ body {
 
 	.desktop-img {
 		display: none;
+	}
+
+	.mobile-p {
+		display: block;
 	}
 
 	.featureheader {
