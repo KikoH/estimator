@@ -20,6 +20,11 @@ $(document).ready(function() {
 		var className = this.className;
 		hideTab(className);
 	});
+
+	$('[data-toggle="popover"]').popover({
+		placement : 'bottom',
+		trigger: 'hover'
+	});
 });
 
 function hideTab(tab) {

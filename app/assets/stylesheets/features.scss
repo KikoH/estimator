@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	font-size: 14px;
 }
 
 #main-container {
@@ -16,6 +17,25 @@ body {
 	clear: both;
 }
 
+.header {
+	font-size: 21px;
+	font-weight: 300;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+.intro {
+	font-size: 21px;
+	margin-bottom: 30px;
+	h3 {
+		font-size: 1.2em;
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 0.8em;
+		color: #999
+	}
+}
 /* Container holding all feature sections*/
 .tab-pane {
 	padding: 50px;
@@ -44,15 +64,15 @@ body {
 .toptabheader {
 	color: white;
 	display: inline;
-	font-size: 25px;
 	h3 {
 		display: inline;
+		font-size: 2em;
 	}
 }
 
 .toptabdescription {
 	color: white;
-	font-size: 17px;
+	font-size: 1.1em;
 	margin-bottom: 10px;
 	padding: 10px 20px;
 }
@@ -100,6 +120,16 @@ body {
 .featurecontent {
 	color: black;
 	padding-bottom: 30px;
+}
+
+.popover {
+	background: #434A54;
+	text-align: center;
+	border-radius: 2%;
+}
+
+.popover.bottom > .arrow:after {
+		border-bottom-color: #434A54;
 }
 
 .nav-bottom > li > a{
@@ -164,16 +194,12 @@ body {
 
 	.toptabheader {
 		h3 {
-			font-size: 0.5em;
+			font-size: 1em;
 		}
 	}
 
 	.toptabdescription {
-		padding: 10px 10px;
-		p {
-			font-size: 0.6em;
-		}
-
+		padding: 10px 9px;
 	}
 
 	.fa-fw {
@@ -209,7 +235,7 @@ body {
 		color: rgb(67, 74, 84);
 
 		h1 {
-			font-size: 21px;
+			font-size: 1.5em;
 			margin-top: 0;
 		}
 	}
@@ -219,11 +245,32 @@ body {
 		float: right;
 		width: 75%;
 		color: black;
-		font-size: 1.2em;
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.header {
+		font-size: 16px;
+	}
+
+	.toptabheader {
+		font-size: 1.3em;
+	}
+
+	.toptabdescription {
+		font-size: 1em;
 	}
 }
 
 @media screen and (max-width: 765px) {
+
+	.toptabdescription {
+		p {
+			font-size: 0.7em;
+		}
+
+	}
 	.nav-bottomicon {
 		display: block;
 
