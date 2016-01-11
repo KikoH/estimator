@@ -54,21 +54,23 @@
 
 		<div role="tabpanel" class="tab-pane active web" id="web">
 			<div class="feature-container">
-				<div class="featureheader">
+				<div class="featureheader ">
 					<h1>1. How big is your app?</h1>
 				</div>
 
 				<div class="row">
 					<% @features.each do |feature| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price})" %>
-
+					<div id="size" class="col-xs-12 col-sm-12 col-md-4 feature">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}), checkMark('#{feature.title}')" %>
+						
 						<div class="featurecontent"> 
 							<p> <%= feature.title %> </p>
 							<p class="mobile-p"> <%= feature.description %></p>
 						</div>
 
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png",  :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#{feature.title}', #{feature.price})" %>
+						<div class="">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#{feature.title}', #{feature.price})"%>
+						</div>
 					</div>
 					<% end %>
 				</div>
@@ -80,7 +82,7 @@
 				</div>
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature">
+					<div id="uilevel" class="col-xs-12 col-sm-12 col-md-4 feature">
 						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
 
 						<div class="featurecontent">

@@ -9,6 +9,7 @@ var lastTitlePrice = 0;
 $(document).ready(function() {
 	$('.img-circle').click(function (event) {
 		event.preventDefault();
+		checkMark($(this));
 	});
 
 	if ($(window).width() < 750) {
@@ -44,13 +45,13 @@ function hideTab(tab) {
 }
 
 function addPrice(title, price) {
-	console.log("first"+ title);
 	if (title === lastBigTitle) {
-		alert("Do nothing");
+		total -= price;
 	}else {
-		total -= lastBigTitlePrice;
+		if (total !== 0){
+			total -= lastBigTitlePrice;
+		}
 		total += price;
-		alert(total);
 	}
 	lastBigTitle = title;
 	lastBigTitlePrice = price;
@@ -58,13 +59,13 @@ function addPrice(title, price) {
 };
 
 function addPrice2(title, price) {
-	console.log("second"+ title);
 	if (title === lastTitle) {
-		alert("Do nothing");
+		total -= price;
 	}else {
-		total -= lastTitlePrice;
+		if (total !== 0){
+			total -= lastTitlePrice;
+		}
 		total += price;
-		alert(total);
 	}
 	lastTitle = title;
 	lastTitlePrice = price;
@@ -88,3 +89,35 @@ $(window).resize(function() {
 	}
 });
 
+
+function checkMark(thisObj) {
+	// Size feature container
+	if (thisObj.parents('#size').length){
+		if (thisObj.hasClass('isSelected')) {
+			thisObj.parent().removeClass('checkmark');
+			thisObj.removeClass('isSelected');
+		}else {
+			if ($('#size img').hasClass('isSelected')){
+				$('#size img').parent().removeClass('checkmark');
+				$('#size img').removeClass('isSelected');
+			}
+			thisObj.addClass('isSelected');
+			thisObj.parent().addClass('checkmark');
+		}
+	};
+
+	//Ui feature container
+	if (thisObj.parents('#uilevel').length){
+		if (thisObj.hasClass('isSelected')) {
+			thisObj.removeClass('isSelected');
+			thisObj.parent().removeClass('checkmark');
+		}else {
+			if ($('#uilevel img').hasClass('isSelected')){
+				$('#uilevel img').parent().removeClass('checkmark');
+				$('#uilevel img').removeClass('isSelected');
+			}
+			thisObj.addClass('isSelected');
+			thisObj.parent().addClass('checkmark');
+		}
+	};
+};
