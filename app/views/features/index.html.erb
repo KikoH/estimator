@@ -65,7 +65,7 @@
 						
 						<div class="featurecontent"> 
 							<p> <%= feature.title %> </p>
-							<p class="mobile-p"> <%= feature.description %></p>
+							<p class="mobile-p"> <%= feature.table_name? %></p>
 						</div>
 
 						<div class="">
@@ -138,28 +138,42 @@
 		<!-- iOS Section -->
 		<div role="tabpanel" class="tab-pane ios" id="ios">
 			<div class="feature-container">
-				<h1 class="sectionheader">1. How big is your app?</h1>
+				<div class="featureheader ">
+					<h1>1. How big is your app?</h1>
+				</div>
 
 				<div class="row">
 					<% @features.each do |feature| %>
-					<div class="col-md-4">
-						<p class="sectiontitle"> <%= feature.title %> </p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png" alt="" class="img-circle">
-						<%= link_to feature.price, '#',:class => "test", :onclick => "addPrice('#{feature.title}', #{feature.price})"%>
+					<div id="size" class="col-xs-12 col-sm-12 col-md-4 feature">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}), checkMark('#{feature.title}')" %>
+						
+						<div class="featurecontent"> 
+							<p> <%= feature.title %> </p>
+							<p class="mobile-p"> <%= feature.description %></p>
+						</div>
+
+						<div class="">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#feature.title}', #{feature.price})"%>
+						</div>
 					</div>
 					<% end %>
 				</div>
 			</div>
 
 			<div class="feature-container">
-				<h1 class="sectionheader">2. What level of UI would you like?</h1>
-
+				<div class="featureheader">
+					<h1>2. What level of UI would you like?</h1>
+				</div>
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
-					<div class="col-md-4">
-						<p class="sectiontitle"> <%= uifeature.title %> </p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png" alt="" class="img-circle checkmark">
-						<%= link_to uifeature.price, '#', :class => "test", :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
+					<div id="uilevel" class="col-xs-12 col-sm-12 col-md-4 feature">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= uifeature.title %> </p>
+						</div>
+
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
 					</div>
 					<% end %>
 				</div>
@@ -171,29 +185,42 @@
 
 		<div role="tabpanel" class="tab-pane android" id="android">
 			<div class="feature-container">
-				<h1 class="sectionheader">1. How big is your app?</h1>
+				<div class="featureheader ">
+					<h1>1. How big is your app?</h1>
+				</div>
 
 				<div class="row">
 					<% @features.each do |feature| %>
-					<div class="col-md-4">
-						<p class="sectiontitle"> <%= feature.title %> </p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png" alt="" class="img-circle">
-						<%= link_to feature.price, '#',:class => "test", :onclick => "addPrice('#{feature.title}', #{feature.price})"%>
+					<div id="size" class="col-xs-12 col-sm-12 col-md-4 feature">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}), checkMark('#{feature.title}')" %>
+						
+						<div class="featurecontent"> 
+							<p> <%= feature.title %> </p>
+							<p class="mobile-p"> <%= feature.description %></p>
+						</div>
+
+						<div class="">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#feature.title}', #{feature.price})"%>
+						</div>
 					</div>
 					<% end %>
 				</div>
 			</div>
 
 			<div class="feature-container">
-				<div class="sectionheader">
-					<h1> 2. What level of UI would you like?</h1>
+				<div class="featureheader">
+					<h1>2. What level of UI would you like?</h1>
 				</div>
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
-					<div class="col-md-4">
-						<p class="sectiontitle"> <%= uifeature.title %> </p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png" alt="" class="img-circle checkmark">
-						<%= link_to uifeature.price, '#', :class => "test", :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
+					<div id="uilevel" class="col-xs-12 col-sm-12 col-md-4 feature">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= uifeature.title %> </p>
+						</div>
+
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
 					</div>
 					<% end %>
 				</div>
@@ -203,61 +230,112 @@
 
 	<ul class="nav nav-tabs nav-bottom" role="tablist">
 		<li role="presentation" class="active">
-			<a href="#web" aria-controls="web" class="web bottomweb" role="tab" data-toggle="tab">
-				<div class="bottomtabheader">
-					<i class="fa fa-desktop fa-2x"></i> <br>
-					<h3>Need a Web App?</h3>
-				</div>
-				<div class="bottomtabdescription">
-					<p>(or a back-end to your mobile app)<p>
-					</div>
-				</a>
-			</li>
-			<li role="presentation">
-				<a href="#ios" aria-controls="ios" class="ios bottomios" role="tab" data-toggle="tab">
-					<div class="bottomtabheader">
-						<i class="fa fa-apple fa-2x"></i><br>
-						<h3>Need an IOS App?</h3>
-					</div>
-				</a>
-			</li>
-			<li role="presentation">
-				<a href="#android" aria-controls="android" class="android bottomandroid" role="tab" data-toggle="tab">
-					<div class="bottomtabheader">
-						<i class="fa fa-android fa-2x"></i><br>
-						<h3>Need an Android App?</h3>
-					</div>
-				</a>
-			</li>
-		</ul>
-
-		<ul class="nav nav-tabs nav-bottomicon" role="tablist">
-			<li role="presentation" class="active">
-				<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
+			
+			<a href="#web" aria-controls="web" class="web bottom-web" role="tab" data-toggle="tab">
+				<div class="bottom-nav-content">
 					<div class="bottomtabheader">
 						<i class="fa fa-desktop fa-2x"></i> <br>
+						<h3>Need a Web App?</h3>
+					</div>
+					<div class="bottomtabdescription">
+						<p>(or a back-end to your mobile app)<p>
+						</div>
 					</div>
 				</a>
-			</li>
-			<li role="presentation">
-				<a href="#ios" aria-controls="ios" class="ios" role="tab" data-toggle="tab">
-					<div class="bottomtabheader">
-						<i class="fa fa-apple fa-2x"></i><br>
-					</div>
-				</a>
-			</li>
-			<li role="presentation">
-				<a href="#android" aria-controls="android" class="android" role="tab" data-toggle="tab">
-					<div class="bottomtabheader">
-						<i class="fa fa-android fa-2x"></i>
-					</div>
-				</a>
-			</li>
-		</ul>
-		<div class="totalcost">
-			Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
-			<p>Based on Kiko rates.</p>
-			<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
-		</div>
-	</div>
+				<a class="web bottom-web-after">
+					<div class="bottom-nav-content-after">
+						<div class="bottomtabheader">
+							<h4>
+								<i class="fa fa-desktop fa-fw"></i>
+								Web App</h4>
+							</div>
+							<hr>
+							<div class="bottomtabdescription">
+								<p>0 Designer Days<p>
+									<p>50 Developer Days</p>
+									<p style="font-size: 3em;">$1,350</p>
+								</div>
+							</div>
+						</a>
+
+					</li>
+
+					<li role="presentation">
+						<a href="#ios" aria-controls="ios" class="ios bottom-ios" role="tab" data-toggle="tab">
+							<div class="bottomtabheader">
+								<i class="fa fa-apple fa-2x"></i><br>
+								<h3>Need an IOS App?</h3>
+							</div>
+						</a>
+						<a class="ios bottom-ios-after">
+							<div class="bottom-nav-content-after">
+								<div class="bottomtabheader">
+									<h4>
+										<i class="fa fa-desktop fa-fw"></i>
+										IOS App</h4>
+									</div>
+									<hr>
+									<div class="bottomtabdescription">
+										<p>0 Designer Days<p>
+											<p>50 Developer Days</p>
+											<p style="font-size: 3em;">$1,350</p>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li role="presentation">
+								<a href="#android" aria-controls="android" class="android bottom-android" role="tab" data-toggle="tab">
+									<div class="bottomtabheader">
+										<i class="fa fa-android fa-2x"></i><br>
+										<h3>Need an Android App?</h3>
+									</div>
+								</a>
+
+								<a class="android bottom-android-after">
+									<div class="bottom-nav-content-after">
+										<div class="bottomtabheader">
+											<h4>
+												<i class="fa fa-desktop fa-fw"></i>
+												Android App</h4>
+											</div>
+											<hr>
+											<div class="bottomtabdescription">
+												<p>0 Designer Days<p>
+													<p>50 Developer Days</p>
+													<p style="font-size: 3em;">$1,350</p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+
+								<ul class="nav nav-tabs nav-bottomicon" role="tablist">
+									<li role="presentation" class="active">
+										<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
+											<div class="bottomtabheader">
+												<i class="fa fa-desktop fa-2x"></i> <br>
+											</div>
+										</a>
+									</li>
+									<li role="presentation">
+										<a href="#ios" aria-controls="ios" class="ios" role="tab" data-toggle="tab">
+											<div class="bottomtabheader">
+												<i class="fa fa-apple fa-2x"></i><br>
+											</div>
+										</a>
+									</li>
+									<li role="presentation">
+										<a href="#android" aria-controls="android" class="android" role="tab" data-toggle="tab">
+											<div class="bottomtabheader">
+												<i class="fa fa-android fa-2x"></i>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<div class="totalcost">
+									Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
+									<p>Based on Kiko rates.</p>
+									<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
+								</div>
+							</div>
 

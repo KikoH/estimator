@@ -10,6 +10,7 @@ $(document).ready(function() {
 	$('.img-circle').click(function (event) {
 		event.preventDefault();
 		checkMark($(this));
+		showPlatformTotal($(this));
 	});
 
 	if ($(window).width() < 750) {
@@ -46,7 +47,11 @@ function hideTab(tab) {
 
 function addPrice(title, price) {
 	if (title === lastBigTitle) {
-		total -= price;
+		if (total !== 0){
+			total -= price;
+		}else {
+			total += price;
+		}
 	}else {
 		if (total !== 0){
 			total -= lastBigTitlePrice;
@@ -60,7 +65,11 @@ function addPrice(title, price) {
 
 function addPrice2(title, price) {
 	if (title === lastTitle) {
-		total -= price;
+		if (total !== 0){
+			total -= price;
+		}else {
+			total += price;
+		}
 	}else {
 		if (total !== 0){
 			total -= lastTitlePrice;
@@ -121,3 +130,20 @@ function checkMark(thisObj) {
 		}
 	};
 };
+
+function showPlatformTotal(thisObj) {
+	if ( $(thisObj).parents('.web').length ){
+			$('.bottom-web').hide();
+			$('.bottom-web-after').attr('style','display: block !important');
+		}
+
+		if ( $(thisObj).parents('.ios').length ){
+			$('.bottom-ios').hide();
+			$('.bottom-ios-after').attr('style','display: block !important');
+		}
+
+		if ( $(thisObj).parents('.android').length ){
+			$('.bottom-android').hide();
+			$('.bottom-android-after').attr('style','display: block !important');
+		}
+}

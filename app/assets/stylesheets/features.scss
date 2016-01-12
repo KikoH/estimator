@@ -132,9 +132,40 @@ body {
 	border-bottom-color: #434A54;
 }
 
-.nav-bottom > li > a{
-	padding: 70px 10px;
+.bottom-web{
+	padding: 70px 10px !important;
 }
+
+.bottom-web-after {
+	display: none !important;
+	text-align: left;
+	padding: 40px !important;
+	font-weight: bold;
+}
+
+.bottom-ios{
+	padding: 70px 10px !important;
+}
+
+.bottom-ios-after {
+	display: none !important;
+	text-align: left;
+	padding: 40px !important;
+	font-weight: bold;
+	background: #F4D03F;
+}
+
+.bottom-android{
+	padding: 70px 10px !important;
+}
+
+.bottom-android-after {
+	display: none !important;
+	text-align: left;
+	padding: 40px !important;
+	font-weight: bold;
+}
+
 
 .totalcost {
 	width: 100%;
@@ -183,7 +214,7 @@ body {
 .nav-bottom {
 	li {
 		width: 33.33333333%;
-	} 
+	}
 
 	a {
 		height: 260px;
