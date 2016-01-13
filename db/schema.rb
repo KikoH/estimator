@@ -11,26 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107101914) do
+ActiveRecord::Schema.define(version: 20160112104102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "features", force: :cascade do |t|
-    t.string   "title",       null: false
+    t.string   "title",                          null: false
     t.string   "description"
-    t.integer  "price",       null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "price",                          null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "name",           default: "big"
+    t.integer  "developer_days"
+    t.integer  "designer_days"
   end
 
   create_table "uifeatures", force: :cascade do |t|
-    t.string   "title",       null: false
+    t.string   "title",                              null: false
     t.string   "description"
     t.string   "image"
-    t.integer  "price",       null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "price",                              null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "name",           default: "uilevel"
+    t.integer  "developer_days"
+    t.integer  "designer_days"
   end
 
 end
