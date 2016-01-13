@@ -1,10 +1,25 @@
-var total = 0;
+var totalPrice = 0;
+var totalPriceWeb = 0;
+var totalPriceIos = 0;
+var totalPriceAndroid = 0;
 
-var lastBigTitle;
-var lastBigTitlePrice = 0;
+//  Web values
+var lastBigSelectedWeb;
+var lastBigPriceWeb = 0;
+var totalBigPriceWeb = 0;
 
-var lastTitle;
-var lastTitlePrice = 0;
+var lastUiSelectedWeb;
+var lastUiPriceWeb = 0;
+var totalUiPriceWeb = 0;
+
+// IOS values
+var lastBigSelectedIos;
+var lastBigPriceIos = 0;
+var totalBigPriceIos = 0;
+
+var lastUiSelectedIos;
+var lastUiPriceIos = 0;
+var totalUiPriceIos = 0;
 
 $(document).ready(function() {
 	$('.img-circle').click(function (event) {
@@ -45,43 +60,88 @@ function hideTab(tab) {
 	}
 }
 
-function addPrice(title, price) {
-	if (title === lastBigTitle) {
-		if (total !== 0){
-			total -= price;
-		}else {
-			total += price;
+function addPrice(title, price, name, that) {
+	if ($(that).parents('#web').length) {
+
+		if (name === "big"){
+			if (that === lastBigSelectedWeb){
+				if (totalBigPriceWeb !== 0){
+					totalBigPriceWeb -= price;
+				}else {
+					totalBigPriceWeb += price;
+				}
+			}else {
+				if (totalBigPriceWeb !== 0){
+					totalBigPriceWeb -= lastBigPriceWeb;
+				}
+				totalBigPriceWeb += price;
+			}
+			lastBigSelectedWeb = that;
+			lastBigPriceWeb = price;
 		}
-	}else {
-		if (total !== 0){
-			total -= lastBigTitlePrice;
+
+		if (name === "uilevel"){
+			if (that === lastUiSelectedWeb){
+				if (totalUiPriceWeb !== 0){
+					totalUiPriceWeb -= price;
+				}else {
+					totalUiPriceWeb += price;
+				}
+			}else {
+				if (totalUiPriceWeb !== 0){
+					totalUiPriceWeb -= lastUiPriceWeb;
+				}
+				totalUiPriceWeb += price;
+			}
+			lastUiSelectedWeb = that;
+			lastUiPriceWeb = price;
 		}
-		total += price;
+			totalPriceWeb = totalBigPriceWeb + totalUiPriceWeb
+
+	}else if ($(that).parents('#ios').length) {
+
+		if (name === "big"){
+			if (that === lastBigSelectedIos){
+				if (totalBigPriceIos !== 0){
+					totalBigPriceIos -= price;
+				}else {
+					totalBigPriceIos += price;
+				}
+			}else {
+				if (totalBigPriceIos !== 0){
+					totalBigPriceIos -= lastBigPriceIos;
+				}
+				totalBigPriceIos += price;
+			}
+			lastBigSelectedIos = that;
+			lastBigPriceIos = price;
+		}
+
+		if (name === "uilevel"){
+			if (that === lastUiSelectedIos){
+				if (totalUiPriceIos !== 0){
+					totalUiPriceIos -= price;
+				}else {
+					totalUiPriceIos += price;
+				}
+			}else {
+				if (totalUiPriceIos !== 0){
+					totalUiPriceIos -= lastUiPriceIos;
+				}
+				totalUiPriceIos += price;
+			}
+			lastUiSelectedIos = that;
+			lastUiPriceIos = price;
+		}
+			totalPriceIos = totalBigPriceIos + totalUiPriceIos
 	}
-	lastBigTitle = title;
-	lastBigTitlePrice = price;
-	updatePrice();
+		totalPrice = totalPriceWeb + totalPriceIos
+		updatePrice(totalPrice);
 };
 
-function addPrice2(title, price) {
-	if (title === lastTitle) {
-		if (total !== 0){
-			total -= price;
-		}else {
-			total += price;
-		}
-	}else {
-		if (total !== 0){
-			total -= lastTitlePrice;
-		}
-		total += price;
-	}
-	lastTitle = title;
-	lastTitlePrice = price;
-	updatePrice();
-};
-
-function updatePrice() {
+function updatePrice(total) {
+	$('.totalPriceWeb').text(totalPriceWeb);
+	$('.totalPriceIos').text(totalPriceIos);
 	$('.total').text(total);
 };
 
@@ -133,17 +193,17 @@ function checkMark(thisObj) {
 
 function showPlatformTotal(thisObj) {
 	if ( $(thisObj).parents('.web').length ){
-			$('.bottom-web').hide();
-			$('.bottom-web-after').attr('style','display: block !important');
-		}
+		$('.bottom-web').hide();
+		$('.bottom-web-after').attr('style','display: block !important');
+	}
 
-		if ( $(thisObj).parents('.ios').length ){
-			$('.bottom-ios').hide();
-			$('.bottom-ios-after').attr('style','display: block !important');
-		}
+	if ( $(thisObj).parents('.ios').length ){
+		$('.bottom-ios').hide();
+		$('.bottom-ios-after').attr('style','display: block !important');
+	}
 
-		if ( $(thisObj).parents('.android').length ){
-			$('.bottom-android').hide();
-			$('.bottom-android-after').attr('style','display: block !important');
-		}
+	if ( $(thisObj).parents('.android').length ){
+		$('.bottom-android').hide();
+		$('.bottom-android-after').attr('style','display: block !important');
+	}
 }

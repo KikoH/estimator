@@ -224,6 +224,10 @@ body {
 .nav-bottomicon {
 	display: none;
 }
+
+.bottomtabdescription p:nth-of-type(4) {
+	font-size: 3em;
+}
 /*  RESPONSIVE DESIGN   */
 @media screen and (min-width: 992px){
 	#main-container {
