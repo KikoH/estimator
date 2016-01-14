@@ -21,6 +21,16 @@ var lastUiSelectedIos;
 var lastUiPriceIos = 0;
 var totalUiPriceIos = 0;
 
+// Android Values
+var lastBigSelectedAndroid;
+var lastBigPriceAndroid = 0;
+var totalBigPriceAndroid = 0;
+
+var lastUiSelectedAndroid;
+var lastUiPriceAndroid = 0;
+var totalUiPriceAndroid = 0;
+
+
 $(document).ready(function() {
 	$('.img-circle').click(function (event) {
 		event.preventDefault();
@@ -29,13 +39,27 @@ $(document).ready(function() {
 	});
 
 	if ($(window).width() < 750) {
-		$('.bottomios').hide();
-		$('.bottomandroid').hide();
+		$('.bottom-ios').hide();
+		$('.bottom-android').hide();
 	}
 
-	$('.nav-tabs a').click(function(){
+	$('.nav-tabs a').click(function(e){
 		var className = this.className;
-		hideTab(className);
+		if ($(window).width() < 750) {
+			hideTab(className);
+		};
+		if(className === 'web' || className === 'bottom-web'){
+			e.preventDefault();
+			$('a.web').tab('show');
+		}
+		if(className === 'ios' || className === 'bottom-ios'){
+			e.preventDefault();
+			$('a.ios').tab('show');
+		}
+		if(className === 'android' || className === 'bottom-android'){
+			e.preventDefault();
+			$('a.android').tab('show');
+		}
 	});
 
 	$('[data-toggle="popover"]').popover({
@@ -46,22 +70,22 @@ $(document).ready(function() {
 
 function hideTab(tab) {
 	if (tab === 'web') {
-		$('.bottomweb').show();
-		$('.bottomios').hide();
-		$('.bottomandroid').hide();
+		$('.bottom-web').show();
+		$('.bottom-ios').hide();
+		$('.bottom-android').hide();
 	}else if (tab === 'ios'){
-		$('.bottomios').show();
-		$('.bottomweb').hide();
-		$('.bottomandroid').hide();
+		$('.bottom-ios').show();
+		$('.bottom-web').hide();
+		$('.bottom-android').hide();
 	}else if (tab === 'android'){
-		$('.bottomandroid').show();
-		$('.bottomios').hide();
-		$('.bottomweb').hide();
+		$('.bottom-android').show();
+		$('.bottom-ios').hide();
+		$('.bottom-web').hide();
 	}
 }
 
 function addPrice(title, price, name, that) {
-	if ($(that).parents('#web').length) {
+	if ($(that).parents('#web').length) {  // Web Section
 
 		if (name === "big"){
 			if (that === lastBigSelectedWeb){
@@ -96,9 +120,9 @@ function addPrice(title, price, name, that) {
 			lastUiSelectedWeb = that;
 			lastUiPriceWeb = price;
 		}
-			totalPriceWeb = totalBigPriceWeb + totalUiPriceWeb
+		totalPriceWeb = totalBigPriceWeb + totalUiPriceWeb
 
-	}else if ($(that).parents('#ios').length) {
+	}else if ($(that).parents('#ios').length) { // IOS Section
 
 		if (name === "big"){
 			if (that === lastBigSelectedIos){
@@ -133,61 +157,169 @@ function addPrice(title, price, name, that) {
 			lastUiSelectedIos = that;
 			lastUiPriceIos = price;
 		}
-			totalPriceIos = totalBigPriceIos + totalUiPriceIos
+		totalPriceIos = totalBigPriceIos + totalUiPriceIos
+	}else if ($(that).parents('#android').length) {  // ANDROID Section
+
+		if (name === "big"){
+			if (that === lastBigSelectedAndroid){
+				if (totalBigPriceAndroid !== 0){
+					totalBigPriceAndroid -= price;
+				}else {
+					totalBigPriceAndroid += price;
+				}
+			}else {
+				if (totalBigPriceAndroid !== 0){
+					totalBigPriceAndroid -= lastBigPriceAndroid;
+				}
+				totalBigPriceAndroid += price;
+			}
+			lastBigSelectedAndroid = that;
+			lastBigPriceAndroid = price;
+		}
+
+		if (name === "uilevel"){
+			if (that === lastUiSelectedAndroid){
+				if (totalUiPriceAndroid !== 0){
+					totalUiPriceAndroid -= price;
+				}else {
+					totalUiPriceAndroid += price;
+				}
+			}else {
+				if (totalUiPriceAndroid !== 0){
+					totalUiPriceAndroid -= lastUiPriceAndroid;
+				}
+				totalUiPriceAndroid += price;
+			}
+			lastUiSelectedAndroid = that;
+			lastUiPriceAndroid = price;
+		}
+		totalPriceAndroid = totalBigPriceAndroid + totalUiPriceAndroid
 	}
-		totalPrice = totalPriceWeb + totalPriceIos
-		updatePrice(totalPrice);
+	totalPrice = totalPriceWeb + totalPriceIos + totalPriceAndroid
+	updatePrice(totalPrice);
 };
 
 function updatePrice(total) {
 	$('.totalPriceWeb').text(totalPriceWeb);
 	$('.totalPriceIos').text(totalPriceIos);
+	$('.totalPriceAndroid').text(totalPriceAndroid);
 	$('.total').text(total);
 };
 
 // On resizing hide and show the bottom tab depending on screen size
 $(window).resize(function() {
 	if ($(window).width() < 750) {
-		$('.bottomios').hide();
-		$('.bottomandroid').hide();
+		$('li .active').show();
+		$('.bottom-ios').hide();
+		$('.bottom-android').hide();
 	}
 	else {
-		$('.bottomios').show();
-		$('.bottomandroid').show();
-		$('.bottomweb').show();
+		$('.bottom-ios').show();
+		$('.bottom-android').show();
+		$('.bottom-web').show();
 	}
 });
 
 
 function checkMark(thisObj) {
+
+	// WEB Section
+	if (thisObj.parents('#web').length){
 	// Size feature container
-	if (thisObj.parents('#size').length){
+	if (thisObj.parents('.size').length){
 		if (thisObj.hasClass('isSelected')) {
 			thisObj.parent().removeClass('checkmark');
 			thisObj.removeClass('isSelected');
 		}else {
-			if ($('#size img').hasClass('isSelected')){
-				$('#size img').parent().removeClass('checkmark');
-				$('#size img').removeClass('isSelected');
+			if ($('#web div.size img').hasClass('isSelected')){
+				$('.size img').parent().removeClass('checkmark');
+				$('.size img').removeClass('isSelected');
 			}
 			thisObj.addClass('isSelected');
 			thisObj.parent().addClass('checkmark');
 		}
 	};
 
-	//Ui feature container
-	if (thisObj.parents('#uilevel').length){
+		//Ui feature container
+		if (thisObj.parents('.uilevel').length){
+			if (thisObj.hasClass('isSelected')) {
+				thisObj.removeClass('isSelected');
+				thisObj.parent().removeClass('checkmark');
+			}else {
+				if ($('#web div.uilevel img').hasClass('isSelected')){
+					$('.uilevel img').parent().removeClass('checkmark');
+					$('.uilevel img').removeClass('isSelected');
+				}
+				thisObj.addClass('isSelected');
+				thisObj.parent().addClass('checkmark');
+			};
+		};
+	};
+
+	//  IOS section
+	if (thisObj.parents('#ios').length){
+	// Size feature container
+	if (thisObj.parents('.size').length){
 		if (thisObj.hasClass('isSelected')) {
-			thisObj.removeClass('isSelected');
 			thisObj.parent().removeClass('checkmark');
+			thisObj.removeClass('isSelected');
 		}else {
-			if ($('#uilevel img').hasClass('isSelected')){
-				$('#uilevel img').parent().removeClass('checkmark');
-				$('#uilevel img').removeClass('isSelected');
+			if ($('#ios div.size img').hasClass('isSelected')){
+				$('.size img').parent().removeClass('checkmark');
+				$('.size img').removeClass('isSelected');
 			}
 			thisObj.addClass('isSelected');
 			thisObj.parent().addClass('checkmark');
 		}
+	};
+
+		//Ui feature container
+		if (thisObj.parents('.uilevel').length){
+			if (thisObj.hasClass('isSelected')) {
+				thisObj.removeClass('isSelected');
+				thisObj.parent().removeClass('checkmark');
+			}else {
+				if ($('#ios div.uilevel img').hasClass('isSelected')){
+					$('.uilevel img').parent().removeClass('checkmark');
+					$('.uilevel img').removeClass('isSelected');
+				}
+				thisObj.addClass('isSelected');
+				thisObj.parent().addClass('checkmark');
+			};
+		};
+	};
+
+	// ANDROID Section
+	if (thisObj.parents('#android').length){
+	// Size feature container
+	if (thisObj.parents('.size').length){
+		if (thisObj.hasClass('isSelected')) {
+			thisObj.parent().removeClass('checkmark');
+			thisObj.removeClass('isSelected');
+		}else {
+			if ($('#android div.size img').hasClass('isSelected')){
+				$('.size img').parent().removeClass('checkmark');
+				$('.size img').removeClass('isSelected');
+			}
+			thisObj.addClass('isSelected');
+			thisObj.parent().addClass('checkmark');
+		}
+	};
+
+		//Ui feature container
+		if (thisObj.parents('.uilevel').length){
+			if (thisObj.hasClass('isSelected')) {
+				thisObj.removeClass('isSelected');
+				thisObj.parent().removeClass('checkmark');
+			}else {
+				if ($('#android div.uilevel img').hasClass('isSelected')){
+					$('.uilevel img').parent().removeClass('checkmark');
+					$('.uilevel img').removeClass('isSelected');
+				}
+				thisObj.addClass('isSelected');
+				thisObj.parent().addClass('checkmark');
+			};
+		};
 	};
 };
 

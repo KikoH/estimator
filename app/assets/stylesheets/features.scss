@@ -78,24 +78,24 @@ body {
 }
 
 /*Nav li's and a's for web tab*/
-.nav-tabs>li.active a.web, .nav-tabs>li.active a.web:focus, .nav-tabs>li.active a.web:hover, .web {
+a.web, a.web:focus, a.web:hover, .web, .bottom-web{
 	background-color: #4FC7FF !important;
 	border: #4FC7FF !important;
-	color: white;
+	color: white !important;
 }
 
 /*Nav li's and a's for ios tab*/
-.nav-tabs>li a.ios, .nav-tabs>li a.ios:focus, .nav-tabs>li a.ios:hover, .ios {
+a.ios, a.ios:focus, a.ios:hover, .ios, .bottom-ios {
 	background-color: #F4D03F !important;
 	border: #F4D03F !important;
-	color: white;
+	color: white !important;
 }
 
 /*Nav li's and a's for android tab*/
-.nav-tabs>li a.android, .nav-tabs>li a.android:focus, .nav-tabs>li a.android:hover, .android {
+a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	background-color: #03C9A9 !important;
 	border: #03C9A9 !important;
-	color: white;
+	color: white !important;
 }
 
 .nav-tabs > li > a {

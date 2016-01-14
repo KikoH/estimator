@@ -10,7 +10,7 @@
 	<!-- Nav tabs -->
 	<ul class="nav nav-tabs toptab" role="tablist">
 		<li role="presentation" class="active">
-			<a href="#web" aria-controls="web" class="web " role="tab" data-toggle="tab">
+			<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
 				<div class="toptabheader">
 					<i class="fa fa-desktop fa-fw"></i>
 					<h3> Web</h3>
@@ -60,7 +60,7 @@
 
 				<div class="row">
 					<% @features.each do |feature| %>
-					<div id="size" class="col-xs-12 col-sm-12 col-md-4 feature">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
 						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}, '#{feature.name}', this), checkMark('#{feature.title}')" %>
 						
 						<div class="featurecontent"> 
@@ -68,7 +68,7 @@
 							<p class="mobile-p"> <%= feature.title %></p>
 						</div>
 
-						<div class="">
+						<div class="size">
 							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#{feature.title}', #{feature.price}, '#{feature.name}', this)"%>
 						</div>
 					</div>
@@ -82,14 +82,15 @@
 				</div>
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
-					<div id="uilevel" class="col-xs-12 col-sm-12 col-md-4 feature">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
 						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, #{uifeature.name})" %>
 
 						<div class="featurecontent">
 							<p class="sectiontitle"> <%= uifeature.title %> </p>
 						</div>
-
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, '#{uifeature.name}', this)" %>
+						<div class="uilevel">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, '#{uifeature.name}', this)" %>
+						</div>
 					</div>
 					<% end %>
 				</div>
@@ -144,7 +145,7 @@
 
 				<div class="row">
 					<% @features.each do |feature| %>
-					<div id="size" class="col-xs-12 col-sm-12 col-md-4 feature">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
 						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}, '#{feature.name}', this), checkMark('#{feature.title}')" %>
 						
 						<div class="featurecontent"> 
@@ -152,7 +153,7 @@
 							<p class="mobile-p"> <%= feature.title %></p>
 						</div>
 
-						<div class="">
+						<div class="size">
 							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#{feature.title}', #{feature.price}, '#{feature.name}', this)"%>
 						</div>
 					</div>
@@ -166,14 +167,16 @@
 				</div>
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
-					<div id="uilevel" class="col-xs-12 col-sm-12 col-md-4 feature">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
 						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, #{uifeature.name})" %>
 
 						<div class="featurecontent">
 							<p class="sectiontitle"> <%= uifeature.title %> </p>
 						</div>
-
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, '#{uifeature.name}', this)" %>
+						
+						<div class="uilevel">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, '#{uifeature.name}', this)" %>
+						</div>
 					</div>
 					<% end %>
 				</div>
@@ -191,16 +194,16 @@
 
 				<div class="row">
 					<% @features.each do |feature| %>
-					<div id="size" class="col-xs-12 col-sm-12 col-md-4 feature">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}), checkMark('#{feature.title}')" %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{feature.title}', #{feature.price}, '#{feature.name}', this), checkMark('#{feature.title}')" %>
 						
 						<div class="featurecontent"> 
 							<p> <%= feature.title %> </p>
-							<p class="mobile-p"> <%= feature.description %></p>
+							<p class="mobile-p"> <%= feature.title %></p>
 						</div>
 
-						<div class="">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#feature.title}', #{feature.price})"%>
+						<div class="size">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "addPrice('#{feature.title}', #{feature.price}, '#{feature.name}', this)"%>
 						</div>
 					</div>
 					<% end %>
@@ -213,14 +216,16 @@
 				</div>
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
-					<div id="uilevel" class="col-xs-12 col-sm-12 col-md-4 feature">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, #{uifeature.name})" %>
 
 						<div class="featurecontent">
 							<p class="sectiontitle"> <%= uifeature.title %> </p>
 						</div>
-
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice2('#{uifeature.title}', #{uifeature.price})" %>
+						
+						<div class="uilevel">
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "addPrice('#{uifeature.title}', #{uifeature.price}, '#{uifeature.name}', this)" %>
+						</div>
 					</div>
 					<% end %>
 				</div>
@@ -230,8 +235,8 @@
 
 	<ul class="nav nav-tabs nav-bottom" role="tablist">
 		<li role="presentation" class="active">
-			
-			<a href="#web" aria-controls="web" class="web bottom-web" role="tab" data-toggle="tab">
+
+			<a href="#web" aria-controls="web" class="bottom-web" role="tab" data-toggle="tab">
 				<div class="bottom-nav-content">
 					<div class="bottomtabheader">
 						<i class="fa fa-desktop fa-2x"></i> <br>
@@ -261,7 +266,7 @@
 					</li>
 
 					<li role="presentation">
-						<a href="#ios" aria-controls="ios" class="ios bottom-ios" role="tab" data-toggle="tab">
+						<a href="#ios" aria-controls="ios" class="bottom-ios" role="tab" data-toggle="tab">
 							<div class="bottomtabheader">
 								<i class="fa fa-apple fa-2x"></i><br>
 								<h3>Need an IOS App?</h3>
@@ -284,7 +289,7 @@
 								</a>
 							</li>
 							<li role="presentation">
-								<a href="#android" aria-controls="android" class="android bottom-android" role="tab" data-toggle="tab">
+								<a href="#android" aria-controls="android" class="bottom-android" role="tab" data-toggle="tab">
 									<div class="bottomtabheader">
 										<i class="fa fa-android fa-2x"></i><br>
 										<h3>Need an Android App?</h3>
@@ -302,7 +307,7 @@
 											<div class="bottomtabdescription">
 												<p>0 Designer Days<p>
 													<p>50 Developer Days</p>
-													<p style="font-size: 3em;">$1,350</p>
+													<p>$<span class="totalPriceAndroid">0</span></p>
 												</div>
 											</div>
 										</a>
