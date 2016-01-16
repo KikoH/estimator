@@ -1,36 +1,3 @@
-var totalPrice = 0;
-var totalPriceWeb = 0;
-var totalPriceIos = 0;
-var totalPriceAndroid = 0;
-
-//  Web values
-var lastBigSelectedWeb;
-var lastBigPriceWeb = 0;
-var totalBigPriceWeb = 0;
-
-var lastUiSelectedWeb;
-var lastUiPriceWeb = 0;
-var totalUiPriceWeb = 0;
-
-// IOS values
-var lastBigSelectedIos;
-var lastBigPriceIos = 0;
-var totalBigPriceIos = 0;
-
-var lastUiSelectedIos;
-var lastUiPriceIos = 0;
-var totalUiPriceIos = 0;
-
-// Android Values
-var lastBigSelectedAndroid;
-var lastBigPriceAndroid = 0;
-var totalBigPriceAndroid = 0;
-
-var lastUiSelectedAndroid;
-var lastUiPriceAndroid = 0;
-var totalUiPriceAndroid = 0;
-
-
 $(document).ready(function() {
 	$('.img-circle').click(function (event) {
 		event.preventDefault();
@@ -48,6 +15,7 @@ $(document).ready(function() {
 		if ($(window).width() < 750) {
 			hideTab(className);
 		};
+
 		if(className === 'web' || className === 'bottom-web'){
 			e.preventDefault();
 			$('a.web').tab('show');
@@ -84,126 +52,229 @@ function hideTab(tab) {
 	}
 }
 
-function addPrice(title, price, name, that) {
-	if ($(that).parents('#web').length) {  // Web Section
+var totalPrice = 0;
+var totalPriceWeb = 0;
+var totalPriceIos = 0;
+var totalPriceAndroid = 0;
 
-		if (name === "big"){
-			if (that === lastBigSelectedWeb){
-				if (totalBigPriceWeb !== 0){
-					totalBigPriceWeb -= price;
-				}else {
-					totalBigPriceWeb += price;
-				}
+//  Web values
+
+var lastBigSelectedWeb;					// Big values
+var lastBigPriceWeb = 0;
+var lastBigDeveloperDaysWeb = 0;
+var lastBigDesignerDaysWeb = 0;
+
+var totalBigPriceWeb = 0;
+var totalBigDeveloperDaysWeb = 0;
+var totalBigDesignerDaysWeb = 0;
+
+
+var lastUiSelectedWeb;					// Ui Level Values
+var lastUiPriceWeb = 0;
+var lastUiDeveloperDaysWeb = 0;
+var lastUiDesignerDaysWeb = 0;
+
+var totalUiPriceWeb = 0;
+var totalUiDeveloperDaysWeb = 0;
+var totalUiDesignerDaysWeb = 0;
+
+// IOS values
+var lastBigSelectedIos;
+var lastBigPriceIos = 0;
+var totalBigPriceIos = 0;
+var totalBigDeveloperDaysIos = 0;
+var totalBigDesignerDaysIos = 0;
+
+var lastUiSelectedIos;
+var lastUiPriceIos = 0;
+var totalUiPriceIos = 0;
+
+// Android Values
+var lastBigSelectedAndroid;
+var lastBigPriceAndroid = 0;
+var totalBigPriceAndroid = 0;
+var totalBigDeveloperDaysAndroid = 0;
+var totalBigDesignerDaysAndroid = 0;
+
+var lastUiSelectedAndroid;
+var lastUiPriceAndroid = 0;
+var totalUiPriceAndroid = 0;
+
+var testArr = [];
+
+function updateTotal(title, price, name, that, devDays, desDays) {
+	if ($(that).parents('#web').length) {
+
+		if (that === lastBigSelectedWeb && totalPriceWeb !== 0){
+			totalPriceWeb -= testArr[0];
+			testArr.splice(0,1);
+		} else {
+			if (totalPriceWeb === 0){
+				totalPriceWeb += price;
+				testArr.push(price);
 			}else {
-				if (totalBigPriceWeb !== 0){
-					totalBigPriceWeb -= lastBigPriceWeb;
-				}
-				totalBigPriceWeb += price;
+				totalPriceWeb -= testArr[0];
+				totalPriceWeb += price;
+				testArr.splice(0,1);
+				testArr.push(price);
 			}
-			lastBigSelectedWeb = that;
-			lastBigPriceWeb = price;
 		}
-
-		if (name === "uilevel"){
-			if (that === lastUiSelectedWeb){
-				if (totalUiPriceWeb !== 0){
-					totalUiPriceWeb -= price;
-				}else {
-					totalUiPriceWeb += price;
-				}
-			}else {
-				if (totalUiPriceWeb !== 0){
-					totalUiPriceWeb -= lastUiPriceWeb;
-				}
-				totalUiPriceWeb += price;
-			}
-			lastUiSelectedWeb = that;
-			lastUiPriceWeb = price;
-		}
-		totalPriceWeb = totalBigPriceWeb + totalUiPriceWeb
-
-	}else if ($(that).parents('#ios').length) { // IOS Section
-
-		if (name === "big"){
-			if (that === lastBigSelectedIos){
-				if (totalBigPriceIos !== 0){
-					totalBigPriceIos -= price;
-				}else {
-					totalBigPriceIos += price;
-				}
-			}else {
-				if (totalBigPriceIos !== 0){
-					totalBigPriceIos -= lastBigPriceIos;
-				}
-				totalBigPriceIos += price;
-			}
-			lastBigSelectedIos = that;
-			lastBigPriceIos = price;
-		}
-
-		if (name === "uilevel"){
-			if (that === lastUiSelectedIos){
-				if (totalUiPriceIos !== 0){
-					totalUiPriceIos -= price;
-				}else {
-					totalUiPriceIos += price;
-				}
-			}else {
-				if (totalUiPriceIos !== 0){
-					totalUiPriceIos -= lastUiPriceIos;
-				}
-				totalUiPriceIos += price;
-			}
-			lastUiSelectedIos = that;
-			lastUiPriceIos = price;
-		}
-		totalPriceIos = totalBigPriceIos + totalUiPriceIos
-	}else if ($(that).parents('#android').length) {  // ANDROID Section
-
-		if (name === "big"){
-			if (that === lastBigSelectedAndroid){
-				if (totalBigPriceAndroid !== 0){
-					totalBigPriceAndroid -= price;
-				}else {
-					totalBigPriceAndroid += price;
-				}
-			}else {
-				if (totalBigPriceAndroid !== 0){
-					totalBigPriceAndroid -= lastBigPriceAndroid;
-				}
-				totalBigPriceAndroid += price;
-			}
-			lastBigSelectedAndroid = that;
-			lastBigPriceAndroid = price;
-		}
-
-		if (name === "uilevel"){
-			if (that === lastUiSelectedAndroid){
-				if (totalUiPriceAndroid !== 0){
-					totalUiPriceAndroid -= price;
-				}else {
-					totalUiPriceAndroid += price;
-				}
-			}else {
-				if (totalUiPriceAndroid !== 0){
-					totalUiPriceAndroid -= lastUiPriceAndroid;
-				}
-				totalUiPriceAndroid += price;
-			}
-			lastUiSelectedAndroid = that;
-			lastUiPriceAndroid = price;
-		}
-		totalPriceAndroid = totalBigPriceAndroid + totalUiPriceAndroid
+		lastBigSelectedWeb = that;
+		printTotal(totalPriceWeb);
 	}
-	totalPrice = totalPriceWeb + totalPriceIos + totalPriceAndroid
-	updatePrice(totalPrice);
-};
+}
 
-function updatePrice(total) {
-	$('.totalPriceWeb').text(totalPriceWeb);
-	$('.totalPriceIos').text(totalPriceIos);
-	$('.totalPriceAndroid').text(totalPriceAndroid);
+// function updateTotal(title, price, name, that, devDays, desDays) {
+// 	if ($(that).parents('#web').length) {  // Web Section
+
+	// 	if (name === "big"){
+	// 		if (that === lastBigSelectedWeb){
+	// 			if (totalBigPriceWeb !== 0){
+	// 				totalBigPriceWeb -= price;
+	// 				totalBigDeveloperDaysWeb -= devDays;
+	// 				totalBigDesignerDaysWeb -= desDays;
+	// 			}else {
+	// 				totalBigPriceWeb += price;
+	// 				totalBigDeveloperDaysWeb += devDays;
+	// 				totalBigDesignerDaysWeb += desDays;
+	// 			}
+	// 		}else {
+	// 			if (totalBigPriceWeb !== 0){
+	// 				totalBigPriceWeb -= lastBigPriceWeb;
+	// 				totalBigDeveloperDaysWeb -= lastBigDeveloperDaysWeb;
+	// 				totalBigDesignerDaysWeb -= lastBigDesignerDaysWeb;
+	// 			}
+	// 			totalBigPriceWeb += price;
+	// 			totalBigDeveloperDaysWeb += devDays;
+	// 			totalBigDesignerDaysWeb += desDays;
+	// 		}
+	// 		lastBigSelectedWeb = that;
+	// 		lastBigPriceWeb = price;
+	// 		lastBigDeveloperDaysWeb = devDays;
+	// 		lastBigDesignerDaysWeb = desDays;
+	// 	}
+
+	// 	if (name === "uilevel"){
+	// 		if (that === lastUiSelectedWeb){
+	// 			if (totalUiPriceWeb !== 0){
+	// 				totalUiPriceWeb -= price;
+	// 				totalUiDeveloperDaysWeb -= devDays;
+	// 				totalUiDesignerDaysWeb -= desDays;
+	// 			}else {
+	// 				totalUiPriceWeb += price;
+	// 				totalUiDeveloperDaysWeb += devDays;
+	// 				totalUiDesignerDaysWeb += desDays;
+	// 			}
+	// 		}else {
+	// 			if (totalUiPriceWeb !== 0){
+	// 				totalUiPriceWeb -= lastUiPriceWeb;
+	// 				totalUiDeveloperDaysWeb -= lastUiDeveloperDaysWeb
+	// 				totalUiDesignerDaysWeb -= lastUiDesignerDaysWeb;
+	// 			}
+	// 			totalUiPriceWeb += price;
+	// 			totalUiDeveloperDaysWeb += devDays;
+	// 			totalUiDesignerDaysWeb += desDays;
+	// 		}
+	// 		lastUiSelectedWeb = that;
+	// 		lastUiPriceWeb = price;
+	// 		lastUiDeveloperDaysWeb = devDays;
+	// 		lastUiDesignerDaysWeb = desDays
+	// 	}
+	// 	totalPriceWeb = totalBigPriceWeb + totalUiPriceWeb
+	// 	totalDevDaysWeb = totalBigDeveloperDaysWeb + totalUiDeveloperDaysWeb;
+	// 	totalDesDaysWeb = totalBigDesignerDaysWeb + totalUiDesignerDaysWeb;
+
+	// }else if ($(that).parents('#ios').length) { // IOS Section
+
+	// 	if (name === "big"){
+	// 		if (that === lastBigSelectedIos){
+	// 			if (totalBigPriceIos !== 0){
+	// 				totalBigPriceIos -= price;
+	// 			}else {
+	// 				totalBigPriceIos += price;
+	// 			}
+	// 		}else {
+	// 			if (totalBigPriceIos !== 0){
+	// 				totalBigPriceIos -= lastBigPriceIos;
+	// 			}
+	// 			totalBigPriceIos += price;
+	// 		}
+	// 		lastBigSelectedIos = that;
+	// 		lastBigPriceIos = price;
+	// 	}
+
+	// 	if (name === "uilevel"){
+	// 		if (that === lastUiSelectedIos){
+	// 			if (totalUiPriceIos !== 0){
+	// 				totalUiPriceIos -= price;
+	// 			}else {
+	// 				totalUiPriceIos += price;
+	// 			}
+	// 		}else {
+	// 			if (totalUiPriceIos !== 0){
+	// 				totalUiPriceIos -= lastUiPriceIos;
+	// 			}
+	// 			totalUiPriceIos += price;
+	// 		}
+	// 		lastUiSelectedIos = that;
+	// 		lastUiPriceIos = price;
+	// 	}
+	// 	totalPriceIos = totalBigPriceIos + totalUiPriceIos
+	// }else if ($(that).parents('#android').length) {  // ANDROID Section
+
+	// 	if (name === "big"){
+	// 		if (that === lastBigSelectedAndroid){
+	// 			if (totalBigPriceAndroid !== 0){
+	// 				totalBigPriceAndroid -= price;
+	// 			}else {
+	// 				totalBigPriceAndroid += price;
+	// 			}
+	// 		}else {
+	// 			if (totalBigPriceAndroid !== 0){
+	// 				totalBigPriceAndroid -= lastBigPriceAndroid;
+	// 			}
+	// 			totalBigPriceAndroid += price;
+	// 		}
+	// 		lastBigSelectedAndroid = that;
+	// 		lastBigPriceAndroid = price;
+	// 	}
+
+	// 	if (name === "uilevel"){
+	// 		if (that === lastUiSelectedAndroid){
+	// 			if (totalUiPriceAndroid !== 0){
+	// 				totalUiPriceAndroid -= price;
+	// 			}else {
+	// 				totalUiPriceAndroid += price;
+	// 			}
+	// 		}else {
+	// 			if (totalUiPriceAndroid !== 0){
+	// 				totalUiPriceAndroid -= lastUiPriceAndroid;
+	// 			}
+	// 			totalUiPriceAndroid += price;
+	// 		}
+	// 		lastUiSelectedAndroid = that;
+	// 		lastUiPriceAndroid = price;
+	// 	}
+	// 	totalPriceAndroid = totalBigPriceAndroid + totalUiPriceAndroid
+	// }
+	// totalPrice = totalPriceWeb + totalPriceIos + totalPriceAndroid
+	// printTotal(totalPrice, totalDevDaysWeb, totalDesDaysWeb);
+// };
+
+function printTotal(total, totalDevDays, totalDesDays) {
+	$('.total-price-web').text(totalPriceWeb);
+	$('.developer-days-web').text(totalDevDays);
+	$('.designer-days-web').text(totalDesDays);
+
+
+	$('.total-price-ios').text(totalPriceIos);
+
+
+	$('.total-price-android').text(totalPriceAndroid);
+
+
 	$('.total').text(total);
+
 };
 
 // On resizing hide and show the bottom tab depending on screen size
