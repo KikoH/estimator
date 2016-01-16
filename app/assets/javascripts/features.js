@@ -60,21 +60,13 @@ var totalPriceAndroid = 0;
 //  Web values
 
 var lastBigSelectedWeb;					// Big values
-var lastBigPriceWeb = 0;
-var lastBigDeveloperDaysWeb = 0;
-var lastBigDesignerDaysWeb = 0;
-
-var totalBigPriceWeb = 0;
+var bigArr = [ [],[], [] ];
+var bigTotal = 0;
 var totalBigDeveloperDaysWeb = 0;
 var totalBigDesignerDaysWeb = 0;
-
-
 var lastUiSelectedWeb;					// Ui Level Values
-var lastUiPriceWeb = 0;
-var lastUiDeveloperDaysWeb = 0;
-var lastUiDesignerDaysWeb = 0;
-
-var totalUiPriceWeb = 0;
+var uiArr = [ [], [], [] ];
+var uiTotal = 0;
 var totalUiDeveloperDaysWeb = 0;
 var totalUiDesignerDaysWeb = 0;
 
@@ -100,27 +92,65 @@ var lastUiSelectedAndroid;
 var lastUiPriceAndroid = 0;
 var totalUiPriceAndroid = 0;
 
-var testArr = [];
+
+function add(a, b) {
+	return a + b;
+}
 
 function updateTotal(title, price, name, that, devDays, desDays) {
 	if ($(that).parents('#web').length) {
-
-		if (that === lastBigSelectedWeb && totalPriceWeb !== 0){
-			totalPriceWeb -= testArr[0];
-			testArr.splice(0,1);
-		} else {
-			if (totalPriceWeb === 0){
-				totalPriceWeb += price;
-				testArr.push(price);
-			}else {
-				totalPriceWeb -= testArr[0];
-				totalPriceWeb += price;
-				testArr.splice(0,1);
-				testArr.push(price);
+		if (name === 'big'){
+			if (that === lastBigSelectedWeb && bigTotal !== 0){
+				bigArr[0].splice(0,1);
+				bigArr[1].splice(0,1);
+				bigArr[2].splice(0,1);
+			} else {
+				if (bigTotal === 0){
+					bigArr[0].push(price);
+					bigArr[1].push(devDays);
+					bigArr[2].push(desDays);
+				}else {
+					bigArr[0].splice(0,1);
+					bigArr[0].push(price);
+					bigArr[1].splice(0,1);
+					bigArr[1].push(devDays);
+					bigArr[2].splice(0,1);
+					bigArr[2].push(desDays);
+				}
 			}
+			lastBigSelectedWeb = that;
+			bigTotal = bigArr[0].reduce(add, 0);
+			totalDevDays = bigArr[1].reduce(add, 0);
+			totalDesDays = bigArr[2].reduce(add, 0);
 		}
-		lastBigSelectedWeb = that;
-		printTotal(totalPriceWeb);
+
+		if (name === 'uilevel'){
+			if (that === lastUiSelectedWeb && uiTotal !== 0){
+				uiArr[0].splice(0,1);
+				uiArr[1].splice(0,1);
+				uiArr[2].splice(0,1);
+			} else {
+				if (uiTotal === 0){
+					uiArr[0].push(price);
+					uiArr[1].push(devDays);
+					uiArr[2].push(desDays);
+				}else {
+					uiArr[0].splice(0,1);
+					uiArr[0].push(price);
+					uiArr[1].splice(0,1);
+					uiArr[1].push(devDays);
+					uiArr[2].splice(0,1);
+					uiArr[2].push(desDays);
+				}
+			}
+			lastUiSelectedWeb = that;
+			uiTotal = uiArr[0].reduce(add,0);
+
+		}
+		totalPriceWeb = bigTotal + uiTotal;
+		totalDevDaysWeb = bigArr[1].reduce(add, 0) + uiArr[1].reduce(add, 0);
+		totalDesDaysWeb = bigArr[2].reduce(add, 0) + uiArr[2].reduce(add, 0);
+		printTotal(totalPriceWeb, totalDevDaysWeb, totalDesDaysWeb);
 	}
 }
 
