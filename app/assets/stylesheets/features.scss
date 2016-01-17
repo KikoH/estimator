@@ -95,7 +95,7 @@ a.ios, a.ios:focus, a.ios:hover, .ios, .bottom-ios {
 a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	background-color: #03C9A9 !important;
 	border: #03C9A9 !important;
-	color: white !important;
+	color: white !important ;
 }
 
 .nav-tabs > li > a {
@@ -225,7 +225,7 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	display: none;
 }
 
-.bottomtabdescription p:nth-of-type(4) {
+.bottomtabdescription p:nth-of-type(3) {
 	font-size: 3em;
 }
 /*  RESPONSIVE DESIGN   */
