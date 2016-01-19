@@ -61,7 +61,7 @@
 				<div class="row">
 					<% @features.each do |feature| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+						<%= link_to image_tag(feature.image_url, :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
 						
 						<div class="featurecontent"> 
 							<p> <%= feature.title %> </p>
@@ -69,7 +69,7 @@
 						</div>
 
 						<div class="size">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+							<%= link_to image_tag(feature.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -83,13 +83,13 @@
 				<div class="row">
 					<% @uifeatures.each do |uifeature| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
+						<%= link_to image_tag(uifeature.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 
 						<div class="featurecontent">
 							<p class="sectiontitle"> <%= uifeature.title %> </p>
 						</div>
 						<div class="uilevel">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
+							<%= link_to image_tag(uifeature.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
