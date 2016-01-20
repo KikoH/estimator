@@ -59,17 +59,17 @@
 				</div>
 
 				<div class="row">
-					<% @features.each do |feature| %>
+					<% @sizes.each do |size| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
-						<%= link_to image_tag(feature.image_url, :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+						<%= link_to image_tag(size.image_url, :id => "#{size.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						
 						<div class="featurecontent"> 
-							<p> <%= feature.title %> </p>
-							<p class="mobile-p"> <%= feature.title %></p>
+							<p> <%= size.title %> </p>
+							<p class="mobile-p"> <%= size.title %></p>
 						</div>
 
 						<div class="size">
-							<%= link_to image_tag(feature.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+							<%= link_to image_tag(size.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{size.description}", :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -144,17 +144,17 @@
 				</div>
 
 				<div class="row">
-					<% @features.each do |feature| %>
+					<% @sizes.each do |size| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{size.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						
 						<div class="featurecontent"> 
-							<p> <%= feature.title %> </p>
-							<p class="mobile-p"> <%= feature.title %></p>
+							<p> <%= size.title %> </p>
+							<p class="mobile-p"> <%= size.title %></p>
 						</div>
 
 						<div class="size">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{size.description}", :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -193,17 +193,17 @@
 				</div>
 
 				<div class="row">
-					<% @features.each do |feature| %>
+					<% @sizes.each do |size| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
-						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{feature.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :id => "#{size.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						
 						<div class="featurecontent"> 
-							<p> <%= feature.title %> </p>
-							<p class="mobile-p"> <%= feature.title %></p>
+							<p> <%= size.title %> </p>
+							<p class="mobile-p"> <%= size.title %></p>
 						</div>
 
 						<div class="size">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{feature.description}", :onclick => "updateTotal(#{feature.price}, '#{feature.name}', #{feature.developer_days}, #{feature.designer_days}, #{feature.id}, this)" %>
+							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{size.description}", :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div>
 					</div>
 					<% end %>

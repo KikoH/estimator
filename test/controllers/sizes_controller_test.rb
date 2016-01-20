@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FeatureTest < ActiveSupport::TestCase
+class SizesControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
