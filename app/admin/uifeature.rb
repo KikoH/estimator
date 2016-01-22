@@ -1,4 +1,4 @@
-ActiveAdmin.register Size do
+ActiveAdmin.register Uifeature do
 menu parent: "Features"
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,17 +13,5 @@ permit_params :title, :description, :price, :image, :developer_days, :designer_d
 #   permitted
 # end
 
-form(:html => { :multipart => true }) do |f|
-    f.inputs "Size" do
-      f.input :title
-      f.input :description
-      f.input :price
-      f.input :image, :as => :file
-      f.input :developer_days
-      f.input :designer_days
-      f.input :name
-    end
-    f.actions
-  end
 
 end

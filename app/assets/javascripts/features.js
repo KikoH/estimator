@@ -69,6 +69,9 @@ var uiObjWeb = {};
 var uiTotalDevDaysWeb = 0;
 var uiTotalDesDaysWeb = 0;
 
+var accountObjWeb = {};
+var accountTotalWeb = 0;
+
 // IOS Values
 var totalPriceIos = 0;
 var totalDevDaysIos = 0;
@@ -129,13 +132,28 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 				uiTotalDesDaysWeb = desDays;
 			}
 		}
-		totalPriceWeb = bigTotalWeb + uiTotalWeb;
+
+		if (name === "account"){
+			if ($('img', that).hasClass('isSelected')) {
+				accountTotalWeb -= accountObjWeb[id];
+				delete accountObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				accountObjWeb[id] = price;
+				accountTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 
 		$('.total-price-web').text(totalPriceWeb);
 		$('.developer-days-web').text(totalDevDaysWeb);
- 		$('.designer-days-web').text(totalDesDaysWeb);
+		$('.designer-days-web').text(totalDesDaysWeb);
 	}
 	// IOS Section
 	if ($(that).parents('#ios').length) {
@@ -172,7 +190,7 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 		totalDesDaysIos = bigTotalDesDaysIos + uiTotalDesDaysIos;
 		$('.total-price-ios').text(totalPriceIos);
 		$('.developer-days-ios').text(totalDevDaysIos);
- 		$('.designer-days-ios').text(totalDesDaysIos);
+		$('.designer-days-ios').text(totalDesDaysIos);
 	}
 
 	// Android Section
@@ -210,183 +228,10 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 		totalDesDaysAndroid = bigTotalDesDaysAndroid + uiTotalDesDaysAndroid;
 		$('.total-price-android').text(totalPriceAndroid);
 		$('.developer-days-android').text(totalDevDaysAndroid);
- 		$('.designer-days-android').text(totalDesDaysAndroid);
+		$('.designer-days-android').text(totalDesDaysAndroid);
 	}
 	$('.total').text(totalPriceWeb + totalPriceIos + totalPriceAndroid);
 }
-
-
-// function updateTotal(title, price, name, that, devDays, desDays, id) {
-// 	alert(id);
-// 	if ($(that).parents('#web').length) {
-// 		if (name === 'big'){
-// 			if (that === lastBigSelectedWeb && bigTotalWeb !== 0){
-// 				bigArrWeb[0].splice(0,1);
-// 				bigArrWeb[1].splice(0,1);
-// 				bigArrWeb[2].splice(0,1);
-// 			} else {
-// 				if (bigTotalWeb === 0){
-// 					bigArrWeb[0].push(price);
-// 					bigArrWeb[1].push(devDays);
-// 					bigArrWeb[2].push(desDays);
-// 				}else {
-// 					bigArrWeb[0].splice(0,1);
-// 					bigArrWeb[0].push(price);
-// 					bigArrWeb[1].splice(0,1);
-// 					bigArrWeb[1].push(devDays);
-// 					bigArrWeb[2].splice(0,1);
-// 					bigArrWeb[2].push(desDays);
-// 				}
-// 			}
-// 			lastBigSelectedWeb = that;
-// 			bigTotalWeb = bigArrWeb[0].reduce(add, 0);
-// 			totalDevDays = bigArrWeb[1].reduce(add, 0);
-// 			totalDesDays = bigArrWeb[2].reduce(add, 0);
-// 		}
-
-// 		if (name === 'uilevel'){
-// 			if (that === lastUiSelectedWeb && uiTotalWeb !== 0){
-// 				uiArrWeb[0].splice(0,1);
-// 				uiArrWeb[1].splice(0,1);
-// 				uiArrWeb[2].splice(0,1);
-// 			} else {
-// 				if (uiTotalWeb === 0){
-// 					uiArrWeb[0].push(price);
-// 					uiArrWeb[1].push(devDays);
-// 					uiArrWeb[2].push(desDays);
-// 				}else {
-// 					uiArrWeb[0].splice(0,1);
-// 					uiArrWeb[0].push(price);
-// 					uiArrWeb[1].splice(0,1);
-// 					uiArrWeb[1].push(devDays);
-// 					uiArrWeb[2].splice(0,1);
-// 					uiArrWeb[2].push(desDays);
-// 				}
-// 			}
-// 			lastUiSelectedWeb = that;
-// 			uiTotalWeb = uiArrWeb[0].reduce(add,0);
-
-// 		}
-// 		totalPriceWeb = bigTotalWeb + uiTotalWeb;
-// 		totalDevDaysWeb = bigArrWeb[1].reduce(add, 0) + uiArrWeb[1].reduce(add, 0);
-// 		totalDesDaysWeb = bigArrWeb[2].reduce(add, 0) + uiArrWeb[2].reduce(add, 0);
-// 		$('.total-price-web').text(totalPriceWeb);
-// 		$('.developer-days-web').text(totalDevDaysWeb);
-// 		$('.designer-days-web').text(totalDesDaysWeb);
-// 	}
-// 	if ($(that).parents('#ios').length) {
-// 		if (name === 'big'){
-// 			if (that === lastBigSelectedIos && bigTotalIos !== 0){
-// 				bigArrIos[0].splice(0,1);
-// 				bigArrIos[1].splice(0,1);
-// 				bigArrIos[2].splice(0,1);
-// 			} else {
-// 				if (bigTotalIos === 0){
-// 					bigArrIos[0].push(price);
-// 					bigArrIos[1].push(devDays);
-// 					bigArrIos[2].push(desDays);
-// 				}else {
-// 					bigArrIos[0].splice(0,1);
-// 					bigArrIos[0].push(price);
-// 					bigArrIos[1].splice(0,1);
-// 					bigArrIos[1].push(devDays);
-// 					bigArrIos[2].splice(0,1);
-// 					bigArrIos[2].push(desDays);
-// 				}
-// 			}
-// 			lastBigSelectedIos = that;
-// 			bigTotalIos = bigArrIos[0].reduce(add, 0);
-// 			totalDevDays = bigArrIos[1].reduce(add, 0);
-// 			totalDesDays = bigArrIos[2].reduce(add, 0);
-// 		}
-
-// 		if (name === 'uilevel'){
-// 			if (that === lastUiSelectedIos && uiTotalIos !== 0){
-// 				uiArrIos[0].splice(0,1);
-// 				uiArrIos[1].splice(0,1);
-// 				uiArrIos[2].splice(0,1);
-// 			} else {
-// 				if (uiTotalIos === 0){
-// 					uiArrIos[0].push(price);
-// 					uiArrIos[1].push(devDays);
-// 					uiArrIos[2].push(desDays);
-// 				}else {
-// 					uiArrIos[0].splice(0,1);
-// 					uiArrIos[0].push(price);
-// 					uiArrIos[1].splice(0,1);
-// 					uiArrIos[1].push(devDays);
-// 					uiArrIos[2].splice(0,1);
-// 					uiArrIos[2].push(desDays);
-// 				}
-// 			}
-// 			lastUiSelectedIos = that;
-// 			uiTotalIos = uiArrIos[0].reduce(add,0);
-
-// 		}
-// 		totalPriceIos = bigTotalIos + uiTotalIos;
-// 		totalDevDaysIos = bigArrIos[1].reduce(add, 0) + uiArrIos[1].reduce(add, 0);
-// 		totalDesDaysIos = bigArrIos[2].reduce(add, 0) + uiArrIos[2].reduce(add, 0);
-// 		$('.total-price-ios').text(totalPriceIos);
-// 		$('.developer-days-ios').text(totalDevDaysIos);
-// 		$('.designer-days-ios').text(totalDesDaysIos);
-// 	}
-// 	if ($(that).parents('#android').length) {
-// 		if (name === 'big'){
-// 			if (that === lastBigSelectedWeb && bigTotalWeb !== 0){
-// 				bigArrWeb[0].splice(0,1);
-// 				bigArrWeb[1].splice(0,1);
-// 				bigArrWeb[2].splice(0,1);
-// 			} else {
-// 				if (bigTotal === 0){
-// 					bigArrWeb[0].push(price);
-// 					bigArrWeb[1].push(devDays);
-// 					bigArrWeb[2].push(desDays);
-// 				}else {
-// 					bigArrWeb[0].splice(0,1);
-// 					bigArrWeb[0].push(price);
-// 					bigArrWeb[1].splice(0,1);
-// 					bigArrWeb[1].push(devDays);
-// 					bigArrWeb[2].splice(0,1);
-// 					bigArrWeb[2].push(desDays);
-// 				}
-// 			}
-// 			lastBigSelectedWeb = that;
-// 			bigTotalWeb = bigArrWeb[0].reduce(add, 0);
-// 			totalDevDays = bigArrWeb[1].reduce(add, 0);
-// 			totalDesDays = bigArrWeb[2].reduce(add, 0);
-// 		}
-
-// 		if (name === 'uilevel'){
-// 			if (that === lastUiSelectedWeb && uiTotalWeb !== 0){
-// 				uiArrWeb[0].splice(0,1);
-// 				uiArrWeb[1].splice(0,1);
-// 				uiArrWeb[2].splice(0,1);
-// 			} else {
-// 				if (uiTotalWeb === 0){
-// 					uiArrWeb[0].push(price);
-// 					uiArrWeb[1].push(devDays);
-// 					uiArrWeb[2].push(desDays);
-// 				}else {
-// 					uiArrWeb[0].splice(0,1);
-// 					uiArrWeb[0].push(price);
-// 					uiArrWeb[1].splice(0,1);
-// 					uiArrWeb[1].push(devDays);
-// 					uiArrWeb[2].splice(0,1);
-// 					uiArrWeb[2].push(desDays);
-// 				}
-// 			}
-// 			lastUiSelectedWeb = that;
-// 			uiTotalWeb = uiArrWeb[0].reduce(add,0);
-
-// 		}
-// 		totalPriceWeb = bigTotalWeb + uiTotalWeb;
-// 		totalDevDaysWeb = bigArr[1].reduce(add, 0) + uiArr[1].reduce(add, 0);
-// 		totalDesDaysWeb = bigArr[2].reduce(add, 0) + uiArr[2].reduce(add, 0);
-// 		$('.total-price-android').text(totalPriceAndroid);
-// 	}
-// 	totalPrice = totalPriceWeb + totalPriceIos + totalPriceAndroid;
-// 	$('.total').text(totalPrice);
-// }
 
 // On resizing hide and show the bottom tab depending on screen size
 $(window).resize(function() {
@@ -404,7 +249,6 @@ $(window).resize(function() {
 
 
 function checkMark(thisObj) {
-
 	// WEB Section
 	if (thisObj.parents('#web').length){
 	// Size feature container

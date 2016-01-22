@@ -24,6 +24,6 @@ class UifeaturesController < ApplicationController
 
 	private
 	def uifeature_params
-		params.require(:uifeature).permit(:title, :description, :price)
+		params.require(:uifeature).permit(:title, :description, :price, :image, :developer_days, :designer_days, :name)
 	end
 end

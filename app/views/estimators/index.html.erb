@@ -62,7 +62,6 @@
 					<% @sizes.each do |size| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
 						<%= link_to image_tag(size.image_url, :id => "#{size.id}", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
-						
 						<div class="featurecontent"> 
 							<p> <%= size.title %> </p>
 							<p class="mobile-p"> <%= size.title %></p>
@@ -95,45 +94,26 @@
 					<% end %>
 				</div>
 			</div>
-
-			<!-- <div class="feature-container">
-				<h1 class="sectionheader">2. Users & Accounts</h1>
-
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Email / Password Sign Up</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/email_password_sign_up@2x-a5cf07d56027a867ce801374a02948cc4ea3067ca6d857c7a4a6ffe1682c90ca.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Facebook Sign Up</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/facebook_sign_up@2x-46a0d49da8179794cc9297cd0a4fb6290578a27b4109aa99718508c38736bdda.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Twitter Sign Up</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/twitter_sign_up@2x-b4c574ccb07b8044b63042c1733df3948b4394d2cb477cda54e6b3702ca0de06.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Google Sign Up</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/google_sign_up@2x-c773648d1999c26fcd27151d61aeb24712438c21ad95e231dd21d70a91742ac9.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">User Invitation Emails</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/user_invitation_email@2x-84e90c98a22d5b9b07f13fe4a485533e0911aecf628e266bf36a107d9091e476.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Multi-tenant Accounts</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/multi_tenant_account@2x-286004fadb58cc30be65bf160fc9789e211c6a45abcac0f19303449f151d67cd.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Subdomains</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/subdomains@2x-8eb8f8e144d940b06a2d96abe6fa4de6d5bc5ff7a1ca74897dd04178797505b6.png" alt="" class="img-circle">
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-3">
-						<p class="sectiontitle">Custom Domains</p>
-						<img src="https://d3h99m5mv5zvgz.cloudfront.net/assets/custom_domains@2x-988309aebe6e4091c5a7ca5b1dff052fe027ea7764ddde8448082123c140e3e7.png" alt="" class="img-circle">
-					</div>
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>3. Users & Accounts</h1>
 				</div>
-			</div> -->
+				<div class="row">
+					<% @accounts.each do |account| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature account">
+						<%= link_to image_tag(account.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= account.title %> </p>
+						</div>
+						<div class="account">
+							<%= link_to image_tag(account.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{account.description}", :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 		
 		<!-- iOS Section -->
@@ -166,7 +146,7 @@
 					<h1>2. What level of UI would you like?</h1>
 				</div>
 				<div class="row">
-					<% @uifeatures.each do |uifeature| %>
+					<% @accounts.each do |uifeature| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
 						<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 
@@ -176,6 +156,26 @@
 						
 						<div class="uilevel">
 							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>3. Users & Accounts</h1>
+				</div>
+				<div class="row">
+					<% @accounts.each do |account| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
+						<%= link_to image_tag(account.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= account.title %> </p>
+						</div>
+						<div class="uilevel">
+							<%= link_to image_tag(account.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{account.description}", :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -230,6 +230,26 @@
 					<% end %>
 				</div>
 			</div>
+
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>3. Users & Accounts</h1>
+				</div>
+				<div class="row">
+					<% @accounts.each do |account| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
+						<%= link_to image_tag(account.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= account.title %> </p>
+						</div>
+						<div class="uilevel">
+							<%= link_to image_tag(account.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{account.description}", :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -257,90 +277,90 @@
 							<hr>
 							<div class="bottomtabdescription">
 								<p><span class="designer-days-web">0</span> Designer Days</p>
-									<p><span class="developer-days-web">0</span> Developer Days</p>
-									<p>$<span class="total-price-web">0</span></p>
+								<p><span class="developer-days-web">0</span> Developer Days</p>
+								<p>$<span class="total-price-web">0</span></p>
+							</div>
+						</div>
+					</a>
+
+				</li>
+
+				<li role="presentation">
+					<a href="#ios" aria-controls="ios" class="bottom-ios" role="tab" data-toggle="tab">
+						<div class="bottomtabheader">
+							<i class="fa fa-apple fa-2x"></i><br>
+							<h3>Need an IOS App?</h3>
+						</div>
+					</a>
+					<a class="ios bottom-ios-after">
+						<div class="bottom-nav-content-after">
+							<div class="bottomtabheader">
+								<h4>
+									<i class="fa fa-desktop fa-fw"></i>
+									IOS App</h4>
+								</div>
+								<hr>
+								<div class="bottomtabdescription">
+									<p> <span class="designer-days-ios">0</span> Designer Days</p>
+									<p> <span class="developer-days-ios">0</span> Developer Days</p>
+									<p>$<span class="total-price-ios">0</span></p>
 								</div>
 							</div>
 						</a>
-
 					</li>
-
 					<li role="presentation">
-						<a href="#ios" aria-controls="ios" class="bottom-ios" role="tab" data-toggle="tab">
+						<a href="#android" aria-controls="android" class="bottom-android" role="tab" data-toggle="tab">
 							<div class="bottomtabheader">
-								<i class="fa fa-apple fa-2x"></i><br>
-								<h3>Need an IOS App?</h3>
+								<i class="fa fa-android fa-2x"></i><br>
+								<h3>Need an Android App?</h3>
 							</div>
 						</a>
-						<a class="ios bottom-ios-after">
+
+						<a class="android bottom-android-after">
 							<div class="bottom-nav-content-after">
 								<div class="bottomtabheader">
 									<h4>
 										<i class="fa fa-desktop fa-fw"></i>
-										IOS App</h4>
+										Android App</h4>
 									</div>
 									<hr>
 									<div class="bottomtabdescription">
-										<p> <span class="designer-days-ios">0</span> Designer Days</p>
-											<p> <span class="developer-days-ios">0</span> Developer Days</p>
-											<p>$<span class="total-price-ios">0</span></p>
-										</div>
+										<p><span class="designer-days-android">0</span> Designer Days</p>
+										<p><span class="developer-days-android">0</span> Developer Days</p>
+										<p>$<span class="total-price-android">0</span></p>
 									</div>
-								</a>
-							</li>
-							<li role="presentation">
-								<a href="#android" aria-controls="android" class="bottom-android" role="tab" data-toggle="tab">
-									<div class="bottomtabheader">
-										<i class="fa fa-android fa-2x"></i><br>
-										<h3>Need an Android App?</h3>
-									</div>
-								</a>
-
-								<a class="android bottom-android-after">
-									<div class="bottom-nav-content-after">
-										<div class="bottomtabheader">
-											<h4>
-												<i class="fa fa-desktop fa-fw"></i>
-												Android App</h4>
-											</div>
-											<hr>
-											<div class="bottomtabdescription">
-												<p><span class="designer-days-android">0</span> Designer Days</p>
-													<p><span class="developer-days-android">0</span> Developer Days</p>
-													<p>$<span class="total-price-android">0</span></p>
-												</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-
-								<ul class="nav nav-tabs nav-bottomicon" role="tablist">
-									<li role="presentation" class="active">
-										<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
-											<div class="bottomtabheader">
-												<i class="fa fa-desktop fa-2x"></i> <br>
-											</div>
-										</a>
-									</li>
-									<li role="presentation">
-										<a href="#ios" aria-controls="ios" class="ios" role="tab" data-toggle="tab">
-											<div class="bottomtabheader">
-												<i class="fa fa-apple fa-2x"></i><br>
-											</div>
-										</a>
-									</li>
-									<li role="presentation">
-										<a href="#android" aria-controls="android" class="android" role="tab" data-toggle="tab">
-											<div class="bottomtabheader">
-												<i class="fa fa-android fa-2x"></i>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="totalcost">
-									Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
-									<p>Based on Kiko rates.</p>
-									<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
 								</div>
-							</div>
+							</a>
+						</li>
+					</ul>
+
+					<ul class="nav nav-tabs nav-bottomicon" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
+								<div class="bottomtabheader">
+									<i class="fa fa-desktop fa-2x"></i> <br>
+								</div>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#ios" aria-controls="ios" class="ios" role="tab" data-toggle="tab">
+								<div class="bottomtabheader">
+									<i class="fa fa-apple fa-2x"></i><br>
+								</div>
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#android" aria-controls="android" class="android" role="tab" data-toggle="tab">
+								<div class="bottomtabheader">
+									<i class="fa fa-android fa-2x"></i>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="totalcost">
+						Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
+						<p>Based on Kiko rates.</p>
+						<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
+					</div>
+				</div>
 

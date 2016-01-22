@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :sizes
   resources :uifeatures
+  resources :accounts
 
   root :to => 'estimators#index'
   

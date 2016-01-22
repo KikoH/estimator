@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120131701) do
+ActiveRecord::Schema.define(version: 20160120175554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "name",           default: "account"
+    t.integer  "developer_days"
+    t.integer  "designer_days"
+    t.integer  "price"
+    t.string   "title"
+    t.string   "image"
+    t.string   "description"
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,18 +60,6 @@ ActiveRecord::Schema.define(version: 20160120131701) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "features", force: :cascade do |t|
-    t.string   "title",                          null: false
-    t.string   "description"
-    t.integer  "price",                          null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "name",           default: "big"
-    t.integer  "developer_days"
-    t.integer  "designer_days"
-    t.string   "image"
-  end
 
   create_table "sizes", force: :cascade do |t|
     t.string   "title",                          null: false
