@@ -197,12 +197,15 @@ var uiTotalDevDaysAndroid = 0;
 var uiTotalDesDaysAndroid = 0;
 var uiObjAndroid = {};
 
-var ugObjAndroid = {};
-var ugTotalAndroid = 0;
+// 3.Account Values
+var accountObjAndroid = {};
+var accountTotalAndroid = 0;
+var accountTotalDevDaysAndroid = 0;
+var accountTotalDesDaysAndroid = 0;
 
 // 4.User Generated content
-var ugContentObjAndroid = {};
-var ugContentTotalAndroid = 0;
+var ugObjAndroid = {};
+var ugTotalAndroid = 0;
 var ugTotalDevDaysAndroid = 0;
 var ugTotalDesDaysAndroid = 0;
 
@@ -224,7 +227,7 @@ var billingTotalAndroid = 0;
 var billingTotalDevDaysAndroid = 0;
 var billingTotalDesDaysAndroid = 0;
 
-// 8.
+// 8. Analytic
 var analyticObjAndroid = {};
 var analyticTotalAndroid = 0;
 var analyticTotalDevDaysAndroid = 0;
@@ -644,9 +647,156 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 				uiTotalDesDaysAndroid = desDays;
 			}
 		}
-		totalPriceAndroid = bigTotalAndroid + uiTotalAndroid;
-		totalDevDaysAndroid = bigTotalDevDaysAndroid + uiTotalDevDaysAndroid;
-		totalDesDaysAndroid = bigTotalDesDaysAndroid + uiTotalDesDaysAndroid;
+
+		if (name === "account"){
+			if ($('img', that).hasClass('isSelected')) {
+				accountTotalAndroid -= accountObjAndroid[id];
+				delete accountObjAndroid[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+				accountTotalDevDaysAndroid -= 1;
+				accountTotalDesDaysAndroid -= 1;
+			} else {
+				accountObjAndroid[id] = price;
+				accountTotalAndroid += price;
+				accountTotalDevDaysAndroid += 1;
+				accountTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "ugcontent"){
+			if ($('img', that).hasClass('isSelected')) {
+				ugTotalAndroid -= ugObjAndroid[id];
+				delete ugObjAndroid[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+				ugTotalDevDaysAndroid -= 1;
+				ugTotalDesDaysAndroid -= 1;
+			} else {
+				ugObjAndroid[id] = price;
+				ugTotalAndroid += price;
+				ugTotalDevDaysAndroid += 1;
+				ugTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "location"){
+			if ($('img', that).hasClass('isSelected')) {
+				locationTotalAndroid -= locationObjAndroid[id];
+				delete locationObjAndroid[id];
+				locationTotalDevDaysAndroid -= 1;
+				locationTotalDesDaysAndroid -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				locationObjAndroid[id] = price;
+				locationTotalAndroid += price;
+				locationTotalDevDaysAndroid += 1;
+				locationTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "social"){
+			if ($('img', that).hasClass('isSelected')) {
+				socialTotalAndroid -= socialObjAndroid[id];
+				delete socialObjAndroid[id];
+				socialTotalDevDaysAndroid -= 1;
+				socialTotalDesDaysAndroid -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				socialObjAndroid[id] = price;
+				socialTotalAndroid += price;
+				socialTotalDevDaysAndroid += 1;
+				socialTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "billing"){
+			if ($('img', that).hasClass('isSelected')) {
+				billingTotalAndroid -= billingObjAndroid[id];
+				delete billingObjAndroid[id];
+				billingTotalDevDaysAndroid -= 1;
+				billingTotalDesDaysAndroid -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				billingObjAndroid[id] = price;
+				billingTotalAndroid += price;
+				billingTotalDevDaysAndroid += 1;
+				billingTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "analytics"){
+			if ($('img', that).hasClass('isSelected')) {
+				analyticTotalAndroid -= analyticObjAndroid[id];
+				delete analyticObjAndroid[id];
+				analyticTotalDevDaysAndroid -= 1;
+				analyticTotalDesDaysAndroid -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				analyticObjAndroid[id] = price;
+				analyticTotalAndroid += price;
+				analyticTotalDevDaysAndroid += 1;
+				analyticTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "integration"){
+			if ($('img', that).hasClass('isSelected')) {
+				integrationTotalAndroid -= integrationObjAndroid[id];
+				delete integrationObjAndroid[id];
+				integrationTotalDevDaysAndroid -= 1;
+				integrationTotalDesDaysAndroid -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				integrationObjAndroid[id] = price;
+				integrationTotalAndroid += price;
+				integrationTotalDevDaysAndroid += 1;
+				integrationTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "security"){
+			if ($('img', that).hasClass('isSelected')) {
+				securityTotalAndroid -= securityObjAndroid[id];
+				delete securityObjAndroid[id];
+				securityTotalDevDaysAndroid -= 1;
+				securityTotalDesDaysAndroid -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				securityObjAndroid[id] = price;
+				securityTotalAndroid += price;
+				securityTotalDevDaysAndroid += 1;
+				securityTotalDesDaysAndroid += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+
+
+		totalPriceAndroid = bigTotalAndroid + uiTotalAndroid + accountTotalAndroid + ugTotalAndroid + locationTotalAndroid + socialTotalAndroid + billingTotalAndroid + analyticTotalAndroid + integrationTotalAndroid + securityTotalAndroid;
+		totalDevDaysAndroid = bigTotalDevDaysAndroid + uiTotalDevDaysAndroid + accountTotalDevDaysAndroid + ugTotalDevDaysAndroid + locationTotalDevDaysAndroid + socialTotalDevDaysAndroid + billingTotalDevDaysAndroid + analyticTotalDevDaysAndroid + integrationTotalDevDaysAndroid + securityTotalDevDaysAndroid;
+		totalDesDaysAndroid = bigTotalDesDaysAndroid + uiTotalDesDaysAndroid + accountTotalDesDaysAndroid + ugTotalDesDaysAndroid + locationTotalDesDaysAndroid + socialTotalDesDaysAndroid + billingTotalDesDaysAndroid + analyticTotalDesDaysAndroid + integrationTotalDesDaysAndroid + securityTotalDesDaysAndroid;
 
 		$('.total-price-android').text(totalPriceAndroid);
 		$('.developer-days-android').text(totalDevDaysAndroid);
