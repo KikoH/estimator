@@ -112,7 +112,12 @@ var integrationObjWeb = {};
 var integrationTotalWeb = 0;
 var integrationTotalDevDaysWeb = 0;
 var integrationTotalDesDaysWeb = 0;
-// 10.
+
+// 10. Security
+var securityObjWeb = {};
+var securityTotalWeb = 0;
+var securityTotalDevDaysWeb = 0;
+var securityTotalDesDaysWeb = 0;
 
 // IOS Values
 var totalPriceIos = 0;
@@ -171,6 +176,12 @@ var integrationTotalIos = 0;
 var integrationTotalDevDaysIos = 0;
 var integrationTotalDesDaysIos = 0;
 
+// 10. Security
+var securityObjIos = {};
+var securityTotalIos = 0;
+var securityTotalDevDaysIos = 0;
+var securityTotalDesDaysIos = 0;
+
 // Android Values
 var totalPriceAndroid = 0;
 var totalDevDaysAndroid = 0;
@@ -224,6 +235,12 @@ var integrationObjAndroid = {};
 var integrationTotalAndroid = 0;
 var integrationTotalDevDaysAndroid = 0;
 var integrationTotalDesDaysAndroid = 0;
+
+// 10. Security
+var securityObjAndroid = {};
+var securityTotalAndroid = 0;
+var securityTotalDevDaysAndroid = 0;
+var securityTotalDesDaysAndroid = 0;
 
 function updateTotal(price, name, devDays, desDays, id, that) {
 	if ($(that).parents('#web').length) {
@@ -354,7 +371,21 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			}
 		}
 
-		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb + billingTotalWeb + analyticTotalWeb + integrationTotalWeb;
+		if (name === "security"){
+			if ($('img', that).hasClass('isSelected')) {
+				securityTotalWeb -= securityObjWeb[id];
+				delete securityObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				securityObjWeb[id] = price;
+				securityTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb + billingTotalWeb + analyticTotalWeb + integrationTotalWeb + securityTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 
@@ -362,7 +393,6 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 		$('.developer-days-web').text(totalDevDaysWeb);
 		$('.designer-days-web').text(totalDesDaysWeb);
 	}
-
 
 	// IOS Section
 	if ($(that).parents('#ios').length) {

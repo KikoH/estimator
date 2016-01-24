@@ -251,15 +251,15 @@
 					<h1>10. Security</h1>
 				</div>
 				<div class="row">
-					<% @integrations.each do |integration| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
-						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+					<% @securities.each do |security| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature security">
+						<%= link_to image_tag(security.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 
 						<div class="featurecontent">
-							<p class="sectiontitle"> <%= integration.title %> </p>
+							<p class="sectiontitle"> <%= security.title %> </p>
 						</div>
-						<div class="integration">
-							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						<div class="security">
+							<%= link_to image_tag(security.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{security.description}", :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -470,15 +470,15 @@
 					<h1>10. Security</h1>
 				</div>
 				<div class="row">
-					<% @integrations.each do |integration| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
-						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+					<% @securities.each do |security| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature security">
+						<%= link_to image_tag(security.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 
 						<div class="featurecontent">
-							<p class="sectiontitle"> <%= integration.title %> </p>
+							<p class="sectiontitle"> <%= security.title %> </p>
 						</div>
-						<div class="integration">
-							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						<div class="security">
+							<%= link_to image_tag(security.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{security.description}", :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -694,15 +694,15 @@
 					<h1>10. Security</h1>
 				</div>
 				<div class="row">
-					<% @integrations.each do |integration| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
-						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+					<% @securities.each do |security| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature security">
+						<%= link_to image_tag(security.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 
 						<div class="featurecontent">
-							<p class="sectiontitle"> <%= integration.title %> </p>
+							<p class="sectiontitle"> <%= security.title %> </p>
 						</div>
-						<div class="integration">
-							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						<div class="security">
+							<%= link_to image_tag(security.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{security.description}", :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 						</div>
 					</div>
 					<% end %>

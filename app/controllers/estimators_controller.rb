@@ -9,5 +9,6 @@ class EstimatorsController < ApplicationController
 		@billings = Billing.all
 		@analytics = Analytic.all
 		@integrations = Integration.all
+		@securities = Security.all
 	end
 end
