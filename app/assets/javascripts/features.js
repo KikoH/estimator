@@ -59,18 +59,32 @@ var totalPriceWeb = 0;
 var totalDevDaysWeb = 0;
 var totalDesDaysWeb = 0;
 
+// 1.Size Values
 var bigTotalWeb = 0;
 var bigTotalDevDaysWeb = 0;
 var bigTotalDesDaysWeb = 0;
 var bigObjWeb = {};
 
+// 2.Ui Level Values
 var uiTotalWeb = 0;
 var uiObjWeb = {};
 var uiTotalDevDaysWeb = 0;
 var uiTotalDesDaysWeb = 0;
 
+// 3.Account Values
 var accountObjWeb = {};
 var accountTotalWeb = 0;
+
+// 4.User Generated content
+var ugContentObjWeb = {};
+var ugContentTotalWeb = 0;
+
+// 5.
+// 6.
+// 7.
+// 8.
+// 9.
+// 10.
 
 // IOS Values
 var totalPriceIos = 0;
@@ -87,6 +101,9 @@ var uiTotalDevDaysIos = 0;
 var uiTotalDesDaysIos = 0;
 var uiObjIos = {};
 
+var ugContentObjIos = {};
+var ugContentTotalIos = 0;
+
 // Android Values
 var totalPriceAndroid = 0;
 var totalDevDaysAndroid = 0;
@@ -101,6 +118,9 @@ var uiTotalAndroid = 0;
 var uiTotalDevDaysAndroid = 0;
 var uiTotalDesDaysAndroid = 0;
 var uiObjAndroid = {};
+
+var ugContentObjAndroid = {};
+var ugContentTotalAndroid = 0;
 
 function updateTotal(price, name, devDays, desDays, id, that) {
 	if ($(that).parents('#web').length) {
@@ -147,7 +167,21 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			}
 		}
 
-		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb;
+		if (name === "ugcontent"){
+			if ($('img', that).hasClass('isSelected')) {
+				accountTotalWeb -= ugContentObjWeb[id];
+				delete ugContentObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				ugContentObjWeb[id] = price;
+				ugContentTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugContentTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 
@@ -155,6 +189,8 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 		$('.developer-days-web').text(totalDevDaysWeb);
 		$('.designer-days-web').text(totalDesDaysWeb);
 	}
+
+
 	// IOS Section
 	if ($(that).parents('#ios').length) {
 		if (name === 'big'){
@@ -226,6 +262,7 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 		totalPriceAndroid = bigTotalAndroid + uiTotalAndroid;
 		totalDevDaysAndroid = bigTotalDevDaysAndroid + uiTotalDevDaysAndroid;
 		totalDesDaysAndroid = bigTotalDesDaysAndroid + uiTotalDesDaysAndroid;
+		
 		$('.total-price-android').text(totalPriceAndroid);
 		$('.developer-days-android').text(totalDevDaysAndroid);
 		$('.designer-days-android').text(totalDesDaysAndroid);
@@ -265,7 +302,6 @@ function checkMark(thisObj) {
 			thisObj.parent().addClass('checkmark');
 		}
 	};
-
 		//Ui feature container
 		if (thisObj.parents('.uilevel').length){
 			if (thisObj.hasClass('isSelected')) {

@@ -47,12 +47,13 @@
 		</li>
 	</ul>
 	
-	<!-- Tab panes -->
+	<!-- Tab Content panes -->
 	<div class="tab-content">
 
 		<!-- Web section -->
-
 		<div role="tabpanel" class="tab-pane active web" id="web">
+			
+			<!-- WEB Size -->
 			<div class="feature-container">
 				<div class="featureheader ">
 					<h1>1. How big is your app?</h1>
@@ -75,6 +76,7 @@
 				</div>
 			</div>
 
+			<!-- WEB UI Level -->
 			<div class="feature-container">
 				<div class="featureheader">
 					<h1>2. What level of UI would you like?</h1>
@@ -94,6 +96,8 @@
 					<% end %>
 				</div>
 			</div>
+
+			<!-- WEB User and Accounts -->
 			<div class="feature-container">
 				<div class="featureheader">
 					<h1>3. Users & Accounts</h1>
@@ -114,10 +118,34 @@
 				</div>
 			</div>
 
+
+			<!-- WEB User generated content -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>4. User Generated Content</h1>
+				</div>
+				<div class="row">
+					<% @ugcontents.each do |ugcontent| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature ugcontent">
+						<%= link_to image_tag(ugcontent.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= ugcontent.title %> </p>
+						</div>
+						<div class="ugcontent">
+							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
-		
+		<!--  END WEB SECTION -->
+
 		<!-- iOS Section -->
 		<div role="tabpanel" class="tab-pane ios" id="ios">
+			<!-- IOS Size -->
 			<div class="feature-container">
 				<div class="featureheader ">
 					<h1>1. How big is your app?</h1>
@@ -141,6 +169,7 @@
 				</div>
 			</div>
 
+			<!-- IOS UI Level -->
 			<div class="feature-container">
 				<div class="featureheader">
 					<h1>2. What level of UI would you like?</h1>
@@ -162,6 +191,7 @@
 				</div>
 			</div>
 
+			<!-- IOS User and Accounts -->
 			<div class="feature-container">
 				<div class="featureheader">
 					<h1>3. Users & Accounts</h1>
@@ -181,12 +211,38 @@
 					<% end %>
 				</div>
 			</div>
+
+			<!-- IOS User Generated Content -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>4. User Generated Content</h1>
+				</div>
+				<div class="row">
+					<% @ugcontents.each do |ugcontent| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature ugcontent">
+						<%= link_to image_tag(ugcontent.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= ugcontent.title %> </p>
+						</div>
+						<div class="ugcontent">
+							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+
 		</div>
+		<!-- END IOS SECTION -->
 
 
 		<!-- Android Section -->
 
 		<div role="tabpanel" class="tab-pane android" id="android">
+
+			<!-- Android Size -->
 			<div class="feature-container">
 				<div class="featureheader ">
 					<h1>1. How big is your app?</h1>
@@ -210,6 +266,7 @@
 				</div>
 			</div>
 
+			<!-- Android UI Level -->
 			<div class="feature-container">
 				<div class="featureheader">
 					<h1>2. What level of UI would you like?</h1>
@@ -222,7 +279,7 @@
 						<div class="featurecontent">
 							<p class="sectiontitle"> <%= uifeature.title %> </p>
 						</div>
-						
+
 						<div class="uilevel">
 							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 						</div>
@@ -231,6 +288,7 @@
 				</div>
 			</div>
 
+			<!-- Android User and Accounts -->
 			<div class="feature-container">
 				<div class="featureheader">
 					<h1>3. Users & Accounts</h1>
@@ -250,8 +308,34 @@
 					<% end %>
 				</div>
 			</div>
+
+
+			<!-- Android User Generated content -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>4. User Generated Content</h1>
+				</div>
+				<div class="row">
+					<% @ugcontents.each do |ugcontent| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature ugcontent">
+						<%= link_to image_tag(ugcontent.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= ugcontent.title %> </p>
+						</div>
+						<div class="ugcontent">
+							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
+
+		<!-- END ANDROID SECTION -->
 	</div>
+	<!-- END Tab CONTENT Pane -->
 
 	<ul class="nav nav-tabs nav-bottom" role="tablist">
 		<li role="presentation" class="active">

@@ -1,0 +1,2 @@
+module UgcontentsHelper
+end
