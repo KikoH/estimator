@@ -141,8 +141,8 @@ var accountTotalDevDaysIos = 0;
 var accountTotalDesDaysIos = 0;
 
 // 4.User Generated content
-var ugContentObjIos = {};
-var ugContentTotalIos = 0;
+var ugObjIos = {};
+var ugTotalIos = 0;
 var ugTotalDevDaysIos = 0;
 var ugTotalDesDaysIos = 0;
 
@@ -197,8 +197,8 @@ var uiTotalDevDaysAndroid = 0;
 var uiTotalDesDaysAndroid = 0;
 var uiObjAndroid = {};
 
-var ugContentObjAndroid = {};
-var ugContentTotalAndroid = 0;
+var ugObjAndroid = {};
+var ugTotalAndroid = 0;
 
 // 4.User Generated content
 var ugContentObjAndroid = {};
@@ -279,9 +279,13 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 				delete accountObjWeb[id];
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
+				accountTotalDevDaysWeb -= 1;
+				accountTotalDesDaysWeb -= 1;
 			} else {
 				accountObjWeb[id] = price;
 				accountTotalWeb += price;
+				accountTotalDevDaysWeb += 1;
+				accountTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -293,9 +297,13 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 				delete ugObjWeb[id];
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
+				ugTotalDevDaysWeb -= 1;
+				ugTotalDesDaysWeb -= 1;
 			} else {
 				ugObjWeb[id] = price;
 				ugTotalWeb += price;
+				ugTotalDevDaysWeb += 1;
+				ugTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -305,11 +313,15 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			if ($('img', that).hasClass('isSelected')) {
 				locationTotalWeb -= locationObjWeb[id];
 				delete locationObjWeb[id];
+				locationTotalDevDaysWeb -= 1;
+				locationTotalDesDaysWeb -= 1;
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
 				locationObjWeb[id] = price;
 				locationTotalWeb += price;
+				locationTotalDevDaysWeb += 1;
+				locationTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -319,11 +331,15 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			if ($('img', that).hasClass('isSelected')) {
 				socialTotalWeb -= socialObjWeb[id];
 				delete socialObjWeb[id];
+				socialTotalDevDaysWeb -= 1;
+				socialTotalDesDaysWeb -= 1;
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
 				socialObjWeb[id] = price;
 				socialTotalWeb += price;
+				socialTotalDevDaysWeb += 1;
+				socialTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -333,11 +349,15 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			if ($('img', that).hasClass('isSelected')) {
 				billingTotalWeb -= billingObjWeb[id];
 				delete billingObjWeb[id];
+				billingTotalDevDaysWeb -= 1;
+				billingTotalDesDaysWeb -= 1;
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
 				billingObjWeb[id] = price;
 				billingTotalWeb += price;
+				billingTotalDevDaysWeb += 1;
+				billingTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -347,11 +367,15 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			if ($('img', that).hasClass('isSelected')) {
 				analyticTotalWeb -= analyticObjWeb[id];
 				delete analyticObjWeb[id];
+				analyticTotalDevDaysWeb -= 1;
+				analyticTotalDesDaysWeb -= 1;
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
 				analyticObjWeb[id] = price;
 				analyticTotalWeb += price;
+				analyticTotalDevDaysWeb += 1;
+				analyticTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -361,11 +385,15 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			if ($('img', that).hasClass('isSelected')) {
 				integrationTotalWeb -= integrationObjWeb[id];
 				delete integrationObjWeb[id];
+				integrationTotalDevDaysWeb -= 1;
+				integrationTotalDesDaysWeb -= 1;
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
 				integrationObjWeb[id] = price;
 				integrationTotalWeb += price;
+				integrationTotalDevDaysWeb += 1;
+				integrationTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
@@ -375,19 +403,23 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			if ($('img', that).hasClass('isSelected')) {
 				securityTotalWeb -= securityObjWeb[id];
 				delete securityObjWeb[id];
+				securityTotalDevDaysWeb -= 1;
+				securityTotalDesDaysWeb -= 1;
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
 				securityObjWeb[id] = price;
 				securityTotalWeb += price;
+				securityTotalDevDaysWeb += 1;
+				securityTotalDesDaysWeb += 1;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
 		}
 
 		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb + billingTotalWeb + analyticTotalWeb + integrationTotalWeb + securityTotalWeb;
-		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
-		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
+		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb + accountTotalDevDaysWeb + ugTotalDevDaysWeb + locationTotalDevDaysWeb + socialTotalDevDaysWeb + billingTotalDevDaysWeb + analyticTotalDevDaysWeb + integrationTotalDevDaysWeb + securityTotalDevDaysWeb;
+		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb + accountTotalDesDaysWeb + ugTotalDesDaysWeb + locationTotalDesDaysWeb + socialTotalDesDaysWeb + billingTotalDesDaysWeb + analyticTotalDesDaysWeb + integrationTotalDesDaysWeb + securityTotalDesDaysWeb;
 
 		$('.total-price-web').text(totalPriceWeb);
 		$('.developer-days-web').text(totalDevDaysWeb);
@@ -424,9 +456,159 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 				uiTotalDesDaysIos = desDays;
 			}
 		}
-		totalPriceIos = bigTotalIos + uiTotalIos;
-		totalDevDaysIos = bigTotalDevDaysIos + uiTotalDevDaysIos;
-		totalDesDaysIos = bigTotalDesDaysIos + uiTotalDesDaysIos;
+
+		if (name === "account"){
+			if ($('img', that).hasClass('isSelected')) {
+				accountTotalIos -= accountObjIos[id];
+				delete accountObjIos[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+				accountTotalDevDaysIos -= 1;
+				accountTotalDesDaysIos -= 1;
+			} else {
+				accountObjIos[id] = price;
+				accountTotalIos += price;
+				accountTotalDevDaysIos += 1;
+				accountTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "ugcontent"){
+			if ($('img', that).hasClass('isSelected')) {
+				ugTotalIos -= ugObjIos[id];
+				delete ugObjIos[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+				ugTotalDevDaysIos -= 1;
+				ugTotalDesDaysIos -= 1;
+			} else {
+				ugObjIos[id] = price;
+				ugTotalIos += price;
+				ugTotalDevDaysIos += 1;
+				ugTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "location"){
+			if ($('img', that).hasClass('isSelected')) {
+				locationTotalIos -= locationObjIos[id];
+				delete locationObjIos[id];
+				locationTotalDevDaysIos -= 1;
+				locationTotalDesDaysIos -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				locationObjIos[id] = price;
+				locationTotalIos += price;
+				locationTotalDevDaysIos += 1;
+				locationTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "social"){
+			if ($('img', that).hasClass('isSelected')) {
+				socialTotalIos -= socialObjIos[id];
+				delete socialObjIos[id];
+				socialTotalDevDaysIos -= 1;
+				socialTotalDesDaysIos -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				socialObjIos[id] = price;
+				socialTotalIos += price;
+				socialTotalDevDaysIos += 1;
+				socialTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "billing"){
+			if ($('img', that).hasClass('isSelected')) {
+				billingTotalIos -= billingObjIos[id];
+				delete billingObjIos[id];
+				billingTotalDevDaysIos -= 1;
+				billingTotalDesDaysIos -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				billingObjIos[id] = price;
+				billingTotalIos += price;
+				billingTotalDevDaysIos += 1;
+				billingTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "analytics"){
+			if ($('img', that).hasClass('isSelected')) {
+				analyticTotalIos -= analyticObjIos[id];
+				delete analyticObjIos[id];
+				analyticTotalDevDaysIos -= 1;
+				analyticTotalDesDaysIos -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				analyticObjIos[id] = price;
+				analyticTotalIos += price;
+				analyticTotalDevDaysIos += 1;
+				analyticTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "integration"){
+			if ($('img', that).hasClass('isSelected')) {
+				integrationTotalIos -= integrationObjIos[id];
+				delete integrationObjIos[id];
+				integrationTotalDevDaysIos -= 1;
+				integrationTotalDesDaysIos -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				integrationObjIos[id] = price;
+				integrationTotalIos += price;
+				integrationTotalDevDaysIos += 1;
+				integrationTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		if (name === "security"){
+			if ($('img', that).hasClass('isSelected')) {
+				securityTotalIos -= securityObjIos[id];
+				delete securityObjIos[id];
+				securityTotalDevDaysIos -= 1;
+				securityTotalDesDaysIos -= 1;
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				securityObjIos[id] = price;
+				securityTotalIos += price;
+				securityTotalDevDaysIos += 1;
+				securityTotalDesDaysIos += 1;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+
+
+		totalPriceIos = bigTotalIos + uiTotalIos + accountTotalIos + ugTotalIos + locationTotalIos + socialTotalIos + billingTotalIos + analyticTotalIos + integrationTotalIos + securityTotalIos;
+		totalDevDaysIos = bigTotalDevDaysIos + uiTotalDevDaysIos + accountTotalDevDaysIos + ugTotalDevDaysIos + locationTotalDevDaysIos + socialTotalDevDaysIos + billingTotalDevDaysIos + analyticTotalDevDaysIos + integrationTotalDevDaysIos + securityTotalDevDaysIos;
+		totalDesDaysIos = bigTotalDesDaysIos + uiTotalDesDaysIos + accountTotalDesDaysIos + ugTotalDesDaysIos + locationTotalDesDaysIos + socialTotalDesDaysIos + billingTotalDesDaysIos + analyticTotalDesDaysIos + integrationTotalDesDaysIos + securityTotalDesDaysIos;
+
+
+
 		$('.total-price-ios').text(totalPriceIos);
 		$('.developer-days-ios').text(totalDevDaysIos);
 		$('.designer-days-ios').text(totalDesDaysIos);
