@@ -182,6 +182,27 @@
 				</div>
 			</div>
 
+			<!-- Web Billing & eCommerce -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>7. Billing & eCommerce</h1>
+				</div>
+				<div class="row">
+					<% @billings.each do |billing| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature billing">
+						<%= link_to image_tag(billing.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= billing.title %> </p>
+						</div>
+						<div class="billing">
+							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 		<!--  END WEB SECTION -->
 
@@ -311,6 +332,27 @@
 						</div>
 						<div class="social">
 							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Ios Billing & eCommerce -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>7. Billing & eCommerce</h1>
+				</div>
+				<div class="row">
+					<% @billings.each do |billing| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature billing">
+						<%= link_to image_tag(billing.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= billing.title %> </p>
+						</div>
+						<div class="billing">
+							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -451,6 +493,27 @@
 						</div>
 						<div class="social">
 							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Android Billing & eCommerce -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>7. Billing & eCommerce</h1>
+				</div>
+				<div class="row">
+					<% @billings.each do |billing| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature billing">
+						<%= link_to image_tag(billing.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= billing.title %> </p>
+						</div>
+						<div class="billing">
+							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
 						</div>
 					</div>
 					<% end %>

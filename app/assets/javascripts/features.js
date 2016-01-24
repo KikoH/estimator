@@ -96,6 +96,10 @@ var socialTotalDevDaysWeb = 0;
 var socialTotalDesDaysWeb = 0;
 
 // 7.
+var billingObjWeb = {};
+var billingTotalWeb = 0;
+var billingTotalDevDaysWeb = 0;
+var billingTotalDesDaysWeb = 0;
 // 8.
 // 9.
 // 10.
@@ -262,7 +266,21 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			}
 		}
 
-		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb;
+		if (name === "billing"){
+			if ($('img', that).hasClass('isSelected')) {
+				billingTotalWeb -= billingObjWeb[id];
+				delete billingObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				billingObjWeb[id] = price;
+				billingTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb + billingTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 
