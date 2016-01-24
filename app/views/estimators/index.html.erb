@@ -224,6 +224,48 @@
 				</div>
 			</div>
 
+			<!-- Web External APIs and Integrations -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>9. External APIs and Integrations</h1>
+				</div>
+				<div class="row">
+					<% @integrations.each do |integration| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
+						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= integration.title %> </p>
+						</div>
+						<div class="integration">
+							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Web Security -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>10. Security</h1>
+				</div>
+				<div class="row">
+					<% @integrations.each do |integration| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
+						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= integration.title %> </p>
+						</div>
+						<div class="integration">
+							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 		<!--  END WEB SECTION -->
 
@@ -395,6 +437,48 @@
 						</div>
 						<div class="analytic">
 							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Ios External APIs and Integrations -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>9. External APIs and Integrations</h1>
+				</div>
+				<div class="row">
+					<% @integrations.each do |integration| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
+						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= integration.title %> </p>
+						</div>
+						<div class="integration">
+							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Ios Security -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>10. Security</h1>
+				</div>
+				<div class="row">
+					<% @integrations.each do |integration| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
+						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= integration.title %> </p>
+						</div>
+						<div class="integration">
+							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -577,6 +661,48 @@
 						</div>
 						<div class="analytic">
 							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Android External APIs and Integrations -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>9. External APIs and Integrations</h1>
+				</div>
+				<div class="row">
+					<% @integrations.each do |integration| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
+						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= integration.title %> </p>
+						</div>
+						<div class="integration">
+							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Android Security -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>10. Security</h1>
+				</div>
+				<div class="row">
+					<% @integrations.each do |integration| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature integration">
+						<%= link_to image_tag(integration.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= integration.title %> </p>
+						</div>
+						<div class="integration">
+							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
 						</div>
 					</div>
 					<% end %>

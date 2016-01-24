@@ -8,5 +8,6 @@ class EstimatorsController < ApplicationController
 		@socials = Social.all
 		@billings = Billing.all
 		@analytics = Analytic.all
+		@integrations = Integration.all
 	end
 end
