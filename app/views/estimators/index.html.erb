@@ -161,6 +161,27 @@
 				</div>
 			</div>
 
+			<!-- Web Social and Engagement -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>6. Social & Engagement</h1>
+				</div>
+				<div class="row">
+					<% @socials.each do |social| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature social">
+						<%= link_to image_tag(social.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= social.title %> </p>
+						</div>
+						<div class="social">
+							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 		<!--  END WEB SECTION -->
 
@@ -269,6 +290,27 @@
 						</div>
 						<div class="location">
 							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Ios Social and Engagement -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>6. Social & Engagement</h1>
+				</div>
+				<div class="row">
+					<% @socials.each do |social| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature social">
+						<%= link_to image_tag(social.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= social.title %> </p>
+						</div>
+						<div class="social">
+							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -394,8 +436,28 @@
 				</div>
 			</div>
 
-		</div>
+			<!-- Android Social and Engagement -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>6. Social & Engagement</h1>
+				</div>
+				<div class="row">
+					<% @socials.each do |social| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature social">
+						<%= link_to image_tag(social.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
 
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= social.title %> </p>
+						</div>
+						<div class="social">
+							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+		</div>
 		<!-- END ANDROID SECTION -->
 	</div>
 	<!-- END Tab CONTENT Pane -->

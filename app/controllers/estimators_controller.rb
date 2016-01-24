@@ -5,5 +5,6 @@ class EstimatorsController < ApplicationController
 		@accounts = Account.all
 		@ugcontents = Ugcontent.all
 		@locations = Location.all
+		@socials = Social.all
 	end
 end

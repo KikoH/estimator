@@ -89,7 +89,12 @@ var locationTotalWeb = 0;
 var locationTotalDevDaysWeb = 0;
 var locationTotalDesDaysWeb = 0;
 
-// 6.
+// 6.Social & Engagement
+var socialObjWeb = {};
+var socialTotalWeb = 0;
+var socialTotalDevDaysWeb = 0;
+var socialTotalDesDaysWeb = 0;
+
 // 7.
 // 8.
 // 9.
@@ -128,6 +133,12 @@ var locationTotalIos = 0;
 var locationTotalDevDaysIos = 0;
 var locationTotalDesDaysIos = 0;
 
+// 6.Social & Engagement
+var socialObjIos = {};
+var socialTotalIos = 0;
+var socialTotalDevDaysIos = 0;
+var socialTotalDesDaysIos = 0;
+
 // Android Values
 var totalPriceAndroid = 0;
 var totalDevDaysAndroid = 0;
@@ -145,6 +156,24 @@ var uiObjAndroid = {};
 
 var ugContentObjAndroid = {};
 var ugContentTotalAndroid = 0;
+
+// 4.User Generated content
+var ugContentObjAndroid = {};
+var ugContentTotalAndroid = 0;
+var ugTotalDevDaysAndroid = 0;
+var ugTotalDesDaysAndroid = 0;
+
+// 5.Dates & location
+var locationObjAndroid = {};
+var locationTotalAndroid = 0;
+var locationTotalDevDaysAndroid = 0;
+var locationTotalDesDaysAndroid = 0;
+
+// 6.Social & Engagement
+var socialObjAndroid = {};
+var socialTotalAndroid = 0;
+var socialTotalDevDaysAndroid = 0;
+var socialTotalDesDaysAndroid = 0;
 
 function updateTotal(price, name, devDays, desDays, id, that) {
 	if ($(that).parents('#web').length) {
@@ -219,7 +248,21 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			}
 		}
 
-		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb;
+		if (name === "social"){
+			if ($('img', that).hasClass('isSelected')) {
+				socialTotalWeb -= socialObjWeb[id];
+				delete socialObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				socialObjWeb[id] = price;
+				socialTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 

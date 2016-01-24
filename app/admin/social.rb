@@ -1,5 +1,7 @@
-ActiveAdmin.register Location do
+ActiveAdmin.register Social do
+
 menu parent: "Features"
+
 permit_params :title, :description, :price, :image, :developer_days, :designer_days, :name
 #
 # or
