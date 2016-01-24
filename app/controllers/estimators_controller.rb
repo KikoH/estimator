@@ -7,5 +7,6 @@ class EstimatorsController < ApplicationController
 		@locations = Location.all
 		@socials = Social.all
 		@billings = Billing.all
+		@analytics = Analytic.all
 	end
 end

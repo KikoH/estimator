@@ -203,6 +203,27 @@
 				</div>
 			</div>
 
+			<!-- Web Admin, Feedback & Analytics -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>8. Admin, Feedback & Analytics</h1>
+				</div>
+				<div class="row">
+					<% @analytics.each do |analytic| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature analytic">
+						<%= link_to image_tag(analytic.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= analytic.title %> </p>
+						</div>
+						<div class="analytic">
+							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 		<!--  END WEB SECTION -->
 
@@ -353,6 +374,27 @@
 						</div>
 						<div class="billing">
 							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- IOS Admin, Feedback & Analytics -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>8. Admin, Feedback & Analytics</h1>
+				</div>
+				<div class="row">
+					<% @analytics.each do |analytic| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature analytic">
+						<%= link_to image_tag(analytic.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= analytic.title %> </p>
+						</div>
+						<div class="analytic">
+							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -514,6 +556,27 @@
 						</div>
 						<div class="billing">
 							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Android Admin, Feedback & Analytics -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>8. Admin, Feedback & Analytics</h1>
+				</div>
+				<div class="row">
+					<% @analytics.each do |analytic| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature analytic">
+						<%= link_to image_tag(analytic.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= analytic.title %> </p>
+						</div>
+						<div class="analytic">
+							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
