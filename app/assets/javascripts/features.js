@@ -101,13 +101,17 @@ var billingTotalWeb = 0;
 var billingTotalDevDaysWeb = 0;
 var billingTotalDesDaysWeb = 0;
 
-// 8.
+// 8. Analytics
 var analyticObjWeb = {};
 var analyticTotalWeb = 0;
 var analyticTotalDevDaysWeb = 0;
 var analyticTotalDesDaysWeb = 0;
 
-// 9.
+// 9. Api and Integrations
+var integrationObjWeb = {};
+var integrationTotalWeb = 0;
+var integrationTotalDevDaysWeb = 0;
+var integrationTotalDesDaysWeb = 0;
 // 10.
 
 // IOS Values
@@ -155,11 +159,17 @@ var billingTotalIos = 0;
 var billingTotalDevDaysIos = 0;
 var billingTotalDesDaysIos = 0;
 
-// 8.
+// 8. Analytic
 var analyticObjIos = {};
 var analyticTotalIos = 0;
 var analyticTotalDevDaysIos = 0;
 var analyticTotalDesDaysIos = 0;
+
+// 9. Api and Integrations
+var integrationObjIos = {};
+var integrationTotalIos = 0;
+var integrationTotalDevDaysIos = 0;
+var integrationTotalDesDaysIos = 0;
 
 // Android Values
 var totalPriceAndroid = 0;
@@ -208,6 +218,12 @@ var analyticObjAndroid = {};
 var analyticTotalAndroid = 0;
 var analyticTotalDevDaysAndroid = 0;
 var analyticTotalDesDaysAndroid = 0;
+
+// 9. Api and Integrations
+var integrationObjAndroid = {};
+var integrationTotalAndroid = 0;
+var integrationTotalDevDaysAndroid = 0;
+var integrationTotalDesDaysAndroid = 0;
 
 function updateTotal(price, name, devDays, desDays, id, that) {
 	if ($(that).parents('#web').length) {
@@ -324,7 +340,21 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			}
 		}
 
-		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb + billingTotalWeb + analyticTotalWeb;
+		if (name === "integration"){
+			if ($('img', that).hasClass('isSelected')) {
+				integrationTotalWeb -= integrationObjWeb[id];
+				delete integrationObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				integrationObjWeb[id] = price;
+				integrationTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb + socialTotalWeb + billingTotalWeb + analyticTotalWeb + integrationTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 
