@@ -4,5 +4,6 @@ class EstimatorsController < ApplicationController
 		@uifeatures = Uifeature.all
 		@accounts = Account.all
 		@ugcontents = Ugcontent.all
+		@locations = Location.all
 	end
 end

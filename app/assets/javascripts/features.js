@@ -74,12 +74,21 @@ var uiTotalDesDaysWeb = 0;
 // 3.Account Values
 var accountObjWeb = {};
 var accountTotalWeb = 0;
+var accountTotalDevDaysWeb = 0;
+var accountTotalDesDaysWeb = 0;
 
 // 4.User Generated content
-var ugContentObjWeb = {};
-var ugContentTotalWeb = 0;
+var ugObjWeb = {};
+var ugTotalWeb = 0;
+var ugTotalDevDaysWeb = 0;
+var ugTotalDesDaysWeb = 0;
 
-// 5.
+// 5.Dates & location
+var locationObjWeb = {};
+var locationTotalWeb = 0;
+var locationTotalDevDaysWeb = 0;
+var locationTotalDesDaysWeb = 0;
+
 // 6.
 // 7.
 // 8.
@@ -101,8 +110,23 @@ var uiTotalDevDaysIos = 0;
 var uiTotalDesDaysIos = 0;
 var uiObjIos = {};
 
+// 3.Account Values
+var accountObjIos = {};
+var accountTotalIos = 0;
+var accountTotalDevDaysIos = 0;
+var accountTotalDesDaysIos = 0;
+
+// 4.User Generated content
 var ugContentObjIos = {};
 var ugContentTotalIos = 0;
+var ugTotalDevDaysIos = 0;
+var ugTotalDesDaysIos = 0;
+
+// 5.Dates & location
+var locationObjIos = {};
+var locationTotalIos = 0;
+var locationTotalDevDaysIos = 0;
+var locationTotalDesDaysIos = 0;
 
 // Android Values
 var totalPriceAndroid = 0;
@@ -169,19 +193,33 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 
 		if (name === "ugcontent"){
 			if ($('img', that).hasClass('isSelected')) {
-				accountTotalWeb -= ugContentObjWeb[id];
-				delete ugContentObjWeb[id];
+				ugTotalWeb -= ugObjWeb[id];
+				delete ugObjWeb[id];
 				$('img', that).removeClass('isSelected');
 				$(that).parent().removeClass('checkmark');
 			} else {
-				ugContentObjWeb[id] = price;
-				ugContentTotalWeb += price;
+				ugObjWeb[id] = price;
+				ugTotalWeb += price;
 				$('img', that).addClass('isSelected');
 				$(that).parent().addClass('checkmark');
 			}
 		}
 
-		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugContentTotalWeb;
+		if (name === "location"){
+			if ($('img', that).hasClass('isSelected')) {
+				locationTotalWeb -= locationObjWeb[id];
+				delete locationObjWeb[id];
+				$('img', that).removeClass('isSelected');
+				$(that).parent().removeClass('checkmark');
+			} else {
+				locationObjWeb[id] = price;
+				locationTotalWeb += price;
+				$('img', that).addClass('isSelected');
+				$(that).parent().addClass('checkmark');
+			}
+		}
+
+		totalPriceWeb = bigTotalWeb + uiTotalWeb + accountTotalWeb + ugTotalWeb + locationTotalWeb;
 		totalDevDaysWeb = bigTotalDevDaysWeb + uiTotalDevDaysWeb;
 		totalDesDaysWeb = bigTotalDesDaysWeb + uiTotalDesDaysWeb;
 
@@ -262,7 +300,7 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 		totalPriceAndroid = bigTotalAndroid + uiTotalAndroid;
 		totalDevDaysAndroid = bigTotalDevDaysAndroid + uiTotalDevDaysAndroid;
 		totalDesDaysAndroid = bigTotalDesDaysAndroid + uiTotalDesDaysAndroid;
-		
+
 		$('.total-price-android').text(totalPriceAndroid);
 		$('.developer-days-android').text(totalDevDaysAndroid);
 		$('.designer-days-android').text(totalDesDaysAndroid);

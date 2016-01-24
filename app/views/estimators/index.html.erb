@@ -140,6 +140,27 @@
 				</div>
 			</div>
 
+			<!-- Web Dates & Locations -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>5. Dates & Locations</h1>
+				</div>
+				<div class="row">
+					<% @locations.each do |location| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature location">
+						<%= link_to image_tag(location.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= location.title %> </p>
+						</div>
+						<div class="location">
+							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
 		</div>
 		<!--  END WEB SECTION -->
 
@@ -227,6 +248,27 @@
 						</div>
 						<div class="ugcontent">
 							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- IOS Dates and Location -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>5. Dates & Locations</h1>
+				</div>
+				<div class="row">
+					<% @locations.each do |location| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature location">
+						<%= link_to image_tag(location.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= location.title %> </p>
+						</div>
+						<div class="location">
+							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -325,6 +367,27 @@
 						</div>
 						<div class="ugcontent">
 							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- Android Dates and Location -->
+			<div class="feature-container">
+				<div class="featureheader">
+					<h1>5. Dates & Locations</h1>
+				</div>
+				<div class="row">
+					<% @locations.each do |location| %>
+					<div class="col-xs-12 col-sm-12 col-md-4 feature location">
+						<%= link_to image_tag(location.image_url, :class => "img-circle mobile-img"), '#', :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+
+						<div class="featurecontent">
+							<p class="sectiontitle"> <%= location.title %> </p>
+						</div>
+						<div class="location">
+							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
