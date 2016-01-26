@@ -103,6 +103,9 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	border-radius: inherit;
 }
 
+.mobile-all {
+	display: none;
+}
 
 .col-xs-12 img, .col-sm-12 img, .col-md-3 img, .col-md-4 img {
 	width: 100%;
@@ -184,7 +187,11 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	display: none;
 }
 
-.mobile-p {
+.mobile-title {
+	display: none;
+}
+
+.mobile-description {
 	display: none;
 }
 
@@ -195,6 +202,10 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 
 .isSelected {
 	border: 10px solid #7BE891;
+}
+
+.isSelected-mobile {
+	background-color: #e3e3e3;
 }
 
 .checkmark:after {
@@ -288,8 +299,9 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 		display: none;
 	}
 
-	.mobile-p {
-		display: block;
+	.mobile-description {
+		display: inline-block;
+		color: #888;
 	}
 
 	.featureheader {
@@ -306,7 +318,6 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 		float: right;
 		width: 75%;
 		color: black;
-		font-size: 1.1em;
 	}
 }
 
@@ -349,5 +360,52 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 		a {
 			height: 260px;
 		}
+	}
+
+	.featurecontent {
+		padding-bottom: 0;
+	}
+
+	.feature-title {
+		margin-bottom: 0;
+
+	}
+
+	.checkmark::after {
+		display: none;
+	}
+
+	.checkmark {
+		background-color: green;
+	}
+
+	.mobile-title {
+		display: block;
+	}
+
+	.mobile-description {
+		display: inline-block;
+		padding-top: 2px;
+		padding-bottom: 0;
+		font-size: 1em;
+		color: #888;
+		line-height: 1.2em;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	.mobile-all {
+		display: block;
+	}
+
+	.isSelected {
+		border: none;
+	}
+
+	.isSelected-mobile {
+		border: none;
+		background-color: #7BE891;
 	}
 }
