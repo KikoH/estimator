@@ -179,13 +179,13 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	border-radius: 1%;
 }
 
-.desktop-img {
+/*.desktop-img {
 	display: block;
 }
 
 .mobile-img { 
 	display: none;
-}
+}*/
 
 .mobile-title {
 	display: none;
@@ -205,7 +205,7 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 }
 
 .isSelected-mobile {
-	background-color: #e3e3e3;
+	background-color: none;
 }
 
 .checkmark:after {
@@ -289,14 +289,32 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 		margin-bottom: 10px;
 	}
 
-	.mobile-img {
+	.img-circle {
 		width: 20% !important;
-		float: left;
+	}
+
+	.desktop {
+		display: none;
+	}
+
+	.checkmark::after {
+		display: none;
+	}
+
+	.mobile-title {
 		display: block;
 	}
 
-	.desktop-img {
-		display: none;
+	.mobile-all {
+		display: block;
+	}
+
+	.isSelected {
+		border: none;
+	}
+
+	.isSelected-mobile {
+		background-color: #7BE891;
 	}
 
 	.mobile-description {
@@ -371,18 +389,6 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 
 	}
 
-	.checkmark::after {
-		display: none;
-	}
-
-	.checkmark {
-		background-color: green;
-	}
-
-	.mobile-title {
-		display: block;
-	}
-
 	.mobile-description {
 		display: inline-block;
 		padding-top: 2px;
@@ -390,22 +396,5 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 		font-size: 1em;
 		color: #888;
 		line-height: 1.2em;
-	}
-
-	.desktop {
-		display: none;
-	}
-
-	.mobile-all {
-		display: block;
-	}
-
-	.isSelected {
-		border: none;
-	}
-
-	.isSelected-mobile {
-		border: none;
-		background-color: #7BE891;
 	}
 }
