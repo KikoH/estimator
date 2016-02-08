@@ -6,11 +6,15 @@ $(document).ready(function() {
 	});
 
 	if ($(window).width() < 750) {
+		$('.web-bottom-tab-info').hide();
+		$('.ios-bottom-tab-info').hide();
+		$('.android-bottom-tab-info').hide();
 		$('.bottom-ios').hide();
 		$('.bottom-android').hide();
 	}
 
 	$('.nav-tabs a').click(function(e){
+		console.log(e);
 		var className = this.className;
 		if ($(window).width() < 750) {
 			hideTab(className);
@@ -888,18 +892,18 @@ function checkMark(thisObj) {
 
 function showPlatformTotal(thisObj) {
 	if ( $(thisObj).parents('.web').length ){
-		$('.bottom-web').attr('style','display: none !important');
-		$('.bottom-web-after').attr('style','display: block !important');
+		$('.web-bottom-tab-info').show();
+		$('.web-bottom-tab').hide();
 	}
 
 	if ( $(thisObj).parents('.ios').length ){
-		$('.bottom-ios').hide();
-		$('.bottom-ios-after').attr('style','display: block !important');
+		$('.ios-bottom-tab-info').show();
+		$('.ios-bottom-tab').hide();
 	}
 
 	if ( $(thisObj).parents('.android').length ){
-		$('.bottom-android').hide();
-		$('.bottom-android-after').attr('style','display: block !important');
+		$('.android-bottom-tab-info').show();
+		$('.android-bottom-tab').hide();
 	}
 }
 

@@ -741,21 +741,23 @@
 
 			<a href="#web" aria-controls="web" class="bottom-web" role="tab" data-toggle="tab">
 				<div class="bottom-nav-content">
-					<div class="bottomtabheader">
-						<i class="fa fa-desktop fa-2x"></i> <br>
-						<h3>Need a Web App?</h3>
-					</div>
-					<div class="bottomtabdescription">
-						<p>(or a back-end to your mobile app)<p>
-						</div>
-					</div>
-				</a>
-				<a class="web bottom-web-after">
-					<div class="bottom-nav-content-after">
+
+					<div class="web-bottom-tab">
 						<div class="bottomtabheader">
-							<h4>
-								<i class="fa fa-desktop fa-fw"></i>
-								Web App</h4>
+							<i class="fa fa-desktop fa-2x"></i> <br>
+							<h3>Need a Web App?</h3>
+						</div>
+						<div class="bottomtabdescription">
+							<p>(or a back-end to your mobile app)<p>
+							</div>
+						</div>
+
+						<div class="web-bottom-tab-info">
+							<div class="bottomtabheader">
+								<h4>
+									<i class="fa fa-desktop fa-fw"></i>
+									Web App
+								</h4>
 							</div>
 							<hr>
 							<div class="bottomtabdescription">
@@ -764,86 +766,91 @@
 								<p>$<span class="total-price-web">0</span></p>
 							</div>
 						</div>
-					</a>
+					</div>
+				</a>
+			</li>
 
-				</li>
+			<li role="presentation">
+				<a href="#ios" aria-controls="ios" class="bottom-ios" role="tab" data-toggle="tab">
 
-				<li role="presentation">
-					<a href="#ios" aria-controls="ios" class="bottom-ios" role="tab" data-toggle="tab">
+
+					<div class="ios-bottom-tab">
 						<div class="bottomtabheader">
-							<i class="fa fa-apple fa-2x"></i><br>
+							<i class="fa fa-apple fa-2x"></i> <br>
 							<h3>Need an IOS App?</h3>
 						</div>
-					</a>
-					<a class="ios bottom-ios-after">
-						<div class="bottom-nav-content-after">
-							<div class="bottomtabheader">
-								<h4>
-									<i class="fa fa-desktop fa-fw"></i>
-									IOS App</h4>
-								</div>
-								<hr>
-								<div class="bottomtabdescription">
-									<p> <span class="designer-days-ios">0</span> Designer Days</p>
-									<p> <span class="developer-days-ios">0</span> Developer Days</p>
-									<p>$<span class="total-price-ios">0</span></p>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li role="presentation">
-						<a href="#android" aria-controls="android" class="bottom-android" role="tab" data-toggle="tab">
-							<div class="bottomtabheader">
-								<i class="fa fa-android fa-2x"></i><br>
-								<h3>Need an Android App?</h3>
-							</div>
-						</a>
-
-						<a class="android bottom-android-after">
-							<div class="bottom-nav-content-after">
-								<div class="bottomtabheader">
-									<h4>
-										<i class="fa fa-desktop fa-fw"></i>
-										Android App</h4>
-									</div>
-									<hr>
-									<div class="bottomtabdescription">
-										<p><span class="designer-days-android">0</span> Designer Days</p>
-										<p><span class="developer-days-android">0</span> Developer Days</p>
-										<p>$<span class="total-price-android">0</span></p>
-									</div>
-								</div>
-							</a>
-						</li>
-					</ul>
-
-					<ul class="nav nav-tabs nav-bottomicon" role="tablist">
-						<li role="presentation" class="active">
-							<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
-								<div class="bottomtabheader">
-									<i class="fa fa-desktop fa-2x"></i> <br>
-								</div>
-							</a>
-						</li>
-						<li role="presentation">
-							<a href="#ios" aria-controls="ios" class="ios" role="tab" data-toggle="tab">
-								<div class="bottomtabheader">
-									<i class="fa fa-apple fa-2x"></i><br>
-								</div>
-							</a>
-						</li>
-						<li role="presentation">
-							<a href="#android" aria-controls="android" class="android" role="tab" data-toggle="tab">
-								<div class="bottomtabheader">
-									<i class="fa fa-android fa-2x"></i>
-								</div>
-							</a>
-						</li>
-					</ul>
-					<div class="totalcost">
-						Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
-						<p>Based on Kiko rates.</p>
-						<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
 					</div>
-				</div>
+					<div class="ios-bottom-tab-info">
+						<div class="bottomtabheader">
+							<h4>
+								<i class="fa fa-desktop fa-fw"></i>
+								IOS App
+							</h4>
+						</div>
+						<hr>
+						<div class="bottomtabdescription">
+							<p><span class="designer-days-ios">0</span> Designer Days</p>
+							<p><span class="developer-days-ios">0</span> Developer Days</p>
+							<p>$<span class="total-price-ios">0</span></p>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li role="presentation">
+				<a href="#android" aria-controls="android" class="bottom-android" role="tab" data-toggle="tab">
+
+					<div class="android-bottom-tab">
+						<div class="bottomtabheader">
+							<i class="fa fa-android fa-2x"></i><br>
+							<h3>Need an Android App?</h3>
+						</div>
+					</div>
+
+					<div class="android-bottom-tab-info">
+						<div class="bottomtabheader">
+							<h4>
+								<i class="fa fa-desktop fa-fw"></i>
+								Android App
+							</h4>
+						</div>
+						<hr>
+						<div class="bottomtabdescription">
+							<p><span class="designer-days-android">0</span> Designer Days</p>
+							<p><span class="developer-days-android">0</span> Developer Days</p>
+							<p>$<span class="total-price-android">0</span></p>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="nav nav-tabs nav-bottomicon" role="tablist">
+			<li role="presentation" class="active">
+				<a href="#web" aria-controls="web" class="web" role="tab" data-toggle="tab">
+					<div class="bottomtabheader">
+						<i class="fa fa-desktop fa-2x"></i> <br>
+					</div>
+				</a>
+			</li>
+			<li role="presentation">
+				<a href="#ios" aria-controls="ios" class="ios" role="tab" data-toggle="tab">
+					<div class="bottomtabheader">
+						<i class="fa fa-apple fa-2x"></i><br>
+					</div>
+				</a>
+			</li>
+			<li role="presentation">
+				<a href="#android" aria-controls="android" class="android" role="tab" data-toggle="tab">
+					<div class="bottomtabheader">
+						<i class="fa fa-android fa-2x"></i>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<div class="totalcost">
+			Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
+			<p>Based on Kiko rates.</p>
+			<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
+		</div>
+	</div>
 

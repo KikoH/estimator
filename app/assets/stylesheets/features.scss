@@ -139,11 +139,8 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	padding: 70px 10px !important;
 }
 
-.bottom-web-after {
-	display: none !important;
+.web-bottom-tab-info, .ios-bottom-tab-info, .android-bottom-tab-info{
 	text-align: left;
-	padding: 40px !important;
-	font-weight: bold;
 }
 
 .bottom-ios{
