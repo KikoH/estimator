@@ -17,3 +17,5 @@
 *.jpeg
 *.jpg
 *.png
+# Ignore application configuration
+/config/application.yml

@@ -39,6 +39,12 @@ gem 'pundit'
 #Image uploading
 gem 'carrierwave'
 
+#Figaro env variables
+gem 'figaro'
+
+#Fog
+gem 'fog'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
