@@ -216,7 +216,7 @@
 				</div>
 				<div class="row">
 					<% @analytics.each do |analytic| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature analytic">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature analytics">
 						<div class="featurecontent">	
 							<p class="feature-title"> <%= analytic.title %> </p>
 							<p class="mobile-description"> <%= analytic.description %></p>
@@ -308,7 +308,7 @@
 					<h1>2. What level of UI would you like?</h1>
 				</div>
 				<div class="row">
-					<% @accounts.each do |uifeature| %>
+					<% @uifeatures.each do |uifeature| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
 
 						<div class="featurecontent">	
@@ -441,7 +441,7 @@
 				</div>
 				<div class="row">
 					<% @analytics.each do |analytic| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature analytic">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature analytics">
 
 						<div class="featurecontent">	
 							<p class="feature-title"> <%= analytic.title %> </p>
@@ -672,7 +672,7 @@
 				</div>
 				<div class="row">
 					<% @analytics.each do |analytic| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature analytic">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature analytics">
 
 						<div class="featurecontent">	
 							<p class="feature-title"> <%= analytic.title %> </p>
@@ -847,10 +847,18 @@
 				</a>
 			</li>
 		</ul>
-		<div class="totalcost">
-			Total Cost: $<p style="color:black; display: inline;" class="total">0</p>
+
+		<!-- Total cost and disclaimer section -->
+		<div class="total-container">
+			<p class="total-cost"> Total Cost: $<span class="total">0</span> </p>
 			<p>Based on Kiko rates.</p>
-			<i>Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</i>
+			<p class="disclaimer">Please note, all cost estimates are intended to be indicative of development costs and timescales only and are exclusive of all hosting costs, paid services or purchased assets of any kind. All prices are in USD and inclusive of sales tax.</p>
 		</div>
+
+		<footer>
+			<img style="float: left;"src="http://www.digitivinc.com/assets/img//logo/headlogo.png" alt="">
+			<p style="float: right;">© 2016 Digitiv Inc</p>
+		</footer>
+
 	</div>
 

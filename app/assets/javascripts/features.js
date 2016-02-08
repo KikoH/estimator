@@ -5,16 +5,16 @@ $(document).ready(function() {
 		showPlatformTotal($(this));
 	});
 
+	$('.web-bottom-tab-info').hide();
+	$('.ios-bottom-tab-info').hide();
+	$('.android-bottom-tab-info').hide();
+
 	if ($(window).width() < 750) {
-		$('.web-bottom-tab-info').hide();
-		$('.ios-bottom-tab-info').hide();
-		$('.android-bottom-tab-info').hide();
 		$('.bottom-ios').hide();
 		$('.bottom-android').hide();
 	}
 
 	$('.nav-tabs a').click(function(e){
-		console.log(e);
 		var className = this.className;
 		if ($(window).width() < 750) {
 			hideTab(className);
@@ -760,6 +760,7 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 // On resizing hide and show the bottom tab depending on screen size
 $(window).resize(function() {
 	if ($(window).width() < 750) {
+
 		$('li .active').show();
 		$('.bottom-ios').hide();
 		$('.bottom-android').hide();
