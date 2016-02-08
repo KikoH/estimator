@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.img-circle').click(function (event) {
+	$('.feature-image').click(function (event) {
 		event.preventDefault();
 		checkMark($(this));
 		showPlatformTotal($(this));
@@ -31,8 +31,8 @@ $(document).ready(function() {
 	});
 
 	$('[data-toggle="popover"]').popover({
-		placement : 'bottom',
-		trigger: 'hover'
+		trigger: 'hover',
+		placement: 'bottom'
 	});
 });
 
@@ -572,13 +572,9 @@ function updateTotal(price, name, devDays, desDays, id, that) {
 			}
 		}
 
-
-
 		totalPriceIos = bigTotalIos + uiTotalIos + accountTotalIos + ugTotalIos + locationTotalIos + socialTotalIos + billingTotalIos + analyticTotalIos + integrationTotalIos + securityTotalIos;
 		totalDevDaysIos = bigTotalDevDaysIos + uiTotalDevDaysIos + accountTotalDevDaysIos + ugTotalDevDaysIos + locationTotalDevDaysIos + socialTotalDevDaysIos + billingTotalDevDaysIos + analyticTotalDevDaysIos + integrationTotalDevDaysIos + securityTotalDevDaysIos;
 		totalDesDaysIos = bigTotalDesDaysIos + uiTotalDesDaysIos + accountTotalDesDaysIos + ugTotalDesDaysIos + locationTotalDesDaysIos + socialTotalDesDaysIos + billingTotalDesDaysIos + analyticTotalDesDaysIos + integrationTotalDesDaysIos + securityTotalDesDaysIos;
-
-
 
 		$('.total-price-ios').text(totalPriceIos);
 		$('.developer-days-ios').text(totalDevDaysIos);
@@ -892,7 +888,7 @@ function checkMark(thisObj) {
 
 function showPlatformTotal(thisObj) {
 	if ( $(thisObj).parents('.web').length ){
-		$('.bottom-web').hide();
+		$('.bottom-web').attr('style','display: none !important');
 		$('.bottom-web-after').attr('style','display: block !important');
 	}
 

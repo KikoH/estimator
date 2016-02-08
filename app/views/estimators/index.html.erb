@@ -63,7 +63,7 @@
 					<% @sizes.each do |size| %>
 					<div class="col-xs-12 col-sm-12 col-md-4 feature size">
 						<!-- <div class="size-item-mobile">
-							<%#= link_to image_tag(size.image_url, :class => "img-circle mobile-img"), '#',  :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
+							<%#= link_to image_tag(size.image_url, :class => "feature-image img-circle mobile-img"), '#',  :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div> -->
 						
 						<div class="featurecontent">
@@ -71,8 +71,8 @@
 							<p class="mobile-description"> <%= size.description %></p>
 						</div>
 
-						<div class="size-item">
-							<%= link_to image_tag(size.image_url, :class => "img-circle"), '#','data-toggle' => 'popover', 'data-content' => "#{size.description}", :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
+						<div class="size-item" data-toggle="popover" data-content="<%= size.description %>">
+							<%= link_to image_tag(size.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -93,8 +93,8 @@
 							<p class="mobile-description"> <%= uifeature.description %></p>
 						</div>
 
-						<div class="uilevel-item">
-							<%= link_to image_tag(uifeature.image_url, :class => "img-circle"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
+						<div class="uilevel-item" data-toggle="popover" data-content="<%= uifeature.description %>">
+							<%= link_to image_tag(uifeature.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -114,8 +114,8 @@
 							<p class="mobile-description"> <%= account.description %></p>
 						</div>
 
-						<div class="account-item">
-							<%= link_to image_tag(account.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{account.description}", :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+						<div class="account-item" data-toggle="popover" data-content="<%= account.description %>">
+							<%= link_to image_tag(account.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -136,8 +136,8 @@
 							<p class="mobile-description"> <%= ugcontent.description %></p>
 						</div>
 
-						<div class="ugcontent">
-							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						<div class="ugcontent-item" data-toggle="popover" data-content="<%= ugcontent.description %>">
+							<%= link_to image_tag(ugcontent.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -157,8 +157,8 @@
 							<p class="mobile-description"> <%= location.description %></p>
 						</div>
 
-						<div class="location">
-							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+						<div class="location-item" data-toggle="popover" data-content="<%= location.description %>">
+							<%= link_to image_tag(location.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -179,8 +179,8 @@
 							<p class="mobile-description"> <%= social.description %></p>
 						</div>
 
-						<div class="social">
-							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						<div class="social-item" data-toggle="popover" data-content="<%= social.description %>">
+							<%= link_to image_tag(social.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -201,8 +201,8 @@
 							<p class="mobile-description"> <%= billing.description %></p>
 						</div>
 
-						<div class="billing">
-							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+						<div class="billing-item" data-toggle="popover" data-content="<%= billing.description %>">
+							<%= link_to image_tag(billing.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -222,8 +222,8 @@
 							<p class="mobile-description"> <%= analytic.description %></p>
 						</div>
 
-						<div class="analytic">
-							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+						<div class="analytic-item" data-toggle="popover" data-content="<%= analytic.description %>">
+							<%= link_to image_tag(analytic.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -244,8 +244,8 @@
 							<p class="mobile-description"> <%= integration.description %></p>
 						</div>
 
-						<div class="integration">
-							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						<div class="integration-item" data-toggle="popover" data-content="<%= integration.description %>">
+							<%= link_to image_tag(integration.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -266,8 +266,8 @@
 							<p class="mobile-description"> <%= security.description %></p>
 						</div>
 
-						<div class="security">
-							<%= link_to image_tag(security.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{security.description}", :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
+						<div class="security-item" data-toggle="popover" data-content="<%= security.description %>">
+							<%= link_to image_tag(security.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -294,8 +294,8 @@
 							<p class="mobile-description"> <%= size.description %></p>
 						</div>
 
-						<div class="size">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{size.description}", :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
+						<div class="size-item" data-toggle="popover" data-content="<%= size.description %>">
+							<%= link_to image_tag(size.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -316,8 +316,8 @@
 							<p class="mobile-description"> <%= uifeature.description %></p>
 						</div>
 						
-						<div class="uilevel">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
+						<div class="uilevel-item" data-toggle="popover" data-content="<%= uifeature.description %>">
+							<%= link_to image_tag(uifeature.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -331,15 +331,15 @@
 				</div>
 				<div class="row">
 					<% @accounts.each do |account| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature account">
 
 						<div class="featurecontent">	
 							<p class="feature-title"> <%= account.title %> </p>
 							<p class="mobile-description"> <%= account.description %></p>
 						</div>
 
-						<div class="uilevel">
-							<%= link_to image_tag(account.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{account.description}", :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+						<div class="account-item" data-toggle="popover" data-content="<%= account.description %>">
+							<%= link_to image_tag(account.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -360,8 +360,8 @@
 							<p class="mobile-description"> <%= ugcontent.description %></p>
 						</div>
 
-						<div class="ugcontent">
-							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						<div class="ugcontent-item" data-toggle="popover" data-content="<%= ugcontent.description %>">
+							<%= link_to image_tag(ugcontent.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -382,8 +382,8 @@
 							<p class="mobile-description"> <%= location.description %></p>
 						</div>
 
-						<div class="location">
-							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+						<div class="location-item" data-toggle="popover" data-content="<%= location.description %>">
+							<%= link_to image_tag(location.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -404,8 +404,8 @@
 							<p class="mobile-description"> <%= social.description %></p>
 						</div>
 
-						<div class="social">
-							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						<div class="social-item" data-toggle="popover" data-content="<%= social.description %>">
+							<%= link_to image_tag(social.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -426,8 +426,8 @@
 							<p class="mobile-description"> <%= billing.description %></p>
 						</div>
 
-						<div class="billing">
-							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+						<div class="billing-item" data-toggle="popover" data-content="<%= billing.description %>">
+							<%= link_to image_tag(billing.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -448,8 +448,8 @@
 							<p class="mobile-description"> <%= analytic.description %></p>
 						</div>
 
-						<div class="analytic">
-							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+						<div class="analytic-item" data-toggle="popover" data-content="<%= analytic.description %>">
+							<%= link_to image_tag(analytic.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -470,8 +470,8 @@
 							<p class="mobile-description"> <%= integration.description %></p>
 						</div>
 
-						<div class="integration">
-							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						<div class="integration-item" data-toggle="popover" data-content="<%= integration.description %>">
+							<%= link_to image_tag(integration.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -492,8 +492,8 @@
 							<p class="mobile-description"> <%= security.description %></p>
 						</div>
 
-						<div class="security">
-							<%= link_to image_tag(security.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{security.description}", :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
+						<div class="security-item" data-toggle="popover" data-content="<%= security.description %>">
+							<%= link_to image_tag(security.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -524,8 +524,8 @@
 							<p class="mobile-description"> <%= size.description %></p>
 						</div>
 
-						<div class="size">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/small@2x-d58c5d533621f5fe7ffd8f4cbdd556ebdb723639c371de1570405064fd0ade61.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{size.description}", :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
+						<div class="size-item" data-toggle="popover" data-content="<%= size.description %>">
+							<%= link_to image_tag(size.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{size.price}, '#{size.name}', #{size.developer_days}, #{size.designer_days}, #{size.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -546,8 +546,8 @@
 							<p class="mobile-description"> <%= uifeature.description %></p>
 						</div>
 
-						<div class="uilevel">
-							<%= link_to image_tag("https://d3h99m5mv5zvgz.cloudfront.net/assets/mvp@2x-9434764c1bc0fbfb2a3eff18f45ceb107951a46993b4cd446d6702078a1bcb89.png", :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{uifeature.description}", :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
+						<div class="uilevel-item" data-toggle="popover" data-content="<%= uifeature.description %>">
+							<%= link_to image_tag(uifeature.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{uifeature.price}, '#{uifeature.name}', #{uifeature.developer_days}, #{uifeature.designer_days}, #{uifeature.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -561,15 +561,15 @@
 				</div>
 				<div class="row">
 					<% @accounts.each do |account| %>
-					<div class="col-xs-12 col-sm-12 col-md-4 feature uilevel">
+					<div class="col-xs-12 col-sm-12 col-md-4 feature account">
 
 						<div class="featurecontent">	
 							<p class="feature-title"> <%= account.title %> </p>
 							<p class="mobile-description"> <%= account.description %></p>
 						</div>
 
-						<div class="uilevel">
-							<%= link_to image_tag(account.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{account.description}", :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
+						<div class="account-item" data-toggle="popover" data-content="<%= account.description %>">
+							<%= link_to image_tag(account.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{account.price}, '#{account.name}', #{account.developer_days}, #{account.designer_days}, #{account.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -591,8 +591,8 @@
 							<p class="mobile-description"> <%= ugcontent.description %></p>
 						</div>
 
-						<div class="ugcontent">
-							<%= link_to image_tag(ugcontent.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{ugcontent.description}", :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
+						<div class="ugcontent-item" data-toggle="popover" data-content="<%= ugcontent.description %>">
+							<%= link_to image_tag(ugcontent.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{ugcontent.price}, '#{ugcontent.name}', #{ugcontent.developer_days}, #{ugcontent.designer_days}, #{ugcontent.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -613,8 +613,8 @@
 							<p class="mobile-description"> <%= location.description %></p>
 						</div>
 
-						<div class="location">
-							<%= link_to image_tag(location.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{location.description}", :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
+						<div class="location-item" data-toggle="popover" data-content="<%= location.description %>">
+							<%= link_to image_tag(location.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{location.price}, '#{location.name}', #{location.developer_days}, #{location.designer_days}, #{location.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -635,8 +635,8 @@
 							<p class="mobile-description"> <%= social.description %></p>
 						</div>
 
-						<div class="social">
-							<%= link_to image_tag(social.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{social.description}", :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
+						<div class="social-item" data-toggle="popover" data-content="<%= social.description %>">
+							<%= link_to image_tag(social.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{social.price}, '#{social.name}', #{social.developer_days}, #{social.designer_days}, #{social.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -657,8 +657,8 @@
 							<p class="mobile-description"> <%= billing.description %></p>
 						</div>
 
-						<div class="billing">
-							<%= link_to image_tag(billing.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{billing.description}", :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
+						<div class="billing-item" data-toggle="popover" data-content="<%= billing.description %>">
+							<%= link_to image_tag(billing.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{billing.price}, '#{billing.name}', #{billing.developer_days}, #{billing.designer_days}, #{billing.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -679,8 +679,8 @@
 							<p class="mobile-description"> <%= analytic.description %></p>
 						</div>
 
-						<div class="analytic">
-							<%= link_to image_tag(analytic.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{analytic.description}", :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
+						<div class="analytic-item" data-toggle="popover" data-content="<%= analytic.description %>">
+							<%= link_to image_tag(analytic.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{analytic.price}, '#{analytic.name}', #{analytic.developer_days}, #{analytic.designer_days}, #{analytic.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -701,8 +701,8 @@
 							<p class="mobile-description"> <%= integration.description %></p>
 						</div>
 
-						<div class="integration">
-							<%= link_to image_tag(integration.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{integration.description}", :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
+						<div class="integration-item" data-toggle="popover" data-content="<%= integration.description %>">
+							<%= link_to image_tag(integration.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{integration.price}, '#{integration.name}', #{integration.developer_days}, #{integration.designer_days}, #{integration.id}, this)" %>
 						</div>
 					</div>
 					<% end %>
@@ -723,8 +723,8 @@
 							<p class="mobile-description"> <%= security.description %></p>
 						</div>
 
-						<div class="security">
-							<%= link_to image_tag(security.image_url, :class => "img-circle desktop-img"), '#','data-toggle' => 'popover', 'data-content' => "#{security.description}", :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
+						<div class="security-item" data-toggle="popover" data-content="<%= security.description %>">
+							<%= link_to image_tag(security.image_url, :class => "feature-image img-circle"), '#', :onclick => "updateTotal(#{security.price}, '#{security.name}', #{security.developer_days}, #{security.designer_days}, #{security.id}, this)" %>
 						</div>
 					</div>
 					<% end %>

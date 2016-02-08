@@ -179,14 +179,6 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	border-radius: 1%;
 }
 
-/*.desktop-img {
-	display: block;
-}
-
-.mobile-img { 
-	display: none;
-}*/
-
 .mobile-title {
 	display: none;
 }
@@ -289,7 +281,7 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 		margin-bottom: 10px;
 	}
 
-	.img-circle {
+	.feature-image {
 		width: 20% !important;
 	}
 
@@ -330,7 +322,6 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 			margin-top: 0;
 		}
 	}
-
 
 	.featurecontent {
 		float: right;
