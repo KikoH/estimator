@@ -1,8 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	font-size: 14px;
+	font-family: 'Lato', sans-serif;
 }
 
 #main-container {
@@ -243,7 +246,14 @@ footer {
 	margin: 50px 0;
 }
 /*  RESPONSIVE DESIGN   */
-@media screen and (min-width: 993px){
+
+@media screen and (min-width: 1200px) {
+	#main-container {
+		width: 1170px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
 	#main-container {
 		width: 970px;
 	}
@@ -263,11 +273,22 @@ footer {
 	}
 }
 
-@media screen and (min-width: 1200px) {
-	#main-container {
-		width: 1170px;
+
+
+@media screen and (min-width: 768px) {
+	.header {
+		font-size: 16px;
+	}
+
+	.toptabheader {
+		font-size: 1.3em;
+	}
+
+	.toptabdescription {
+		font-size: 1em;
 	}
 }
+
 @media screen and (max-width: 992px) {
 	.main-container {
 		width: 760px;
@@ -355,21 +376,7 @@ footer {
 	}
 }
 
-@media screen and (min-width: 768px) {
-	.header {
-		font-size: 16px;
-	}
-
-	.toptabheader {
-		font-size: 1.3em;
-	}
-
-	.toptabdescription {
-		font-size: 1em;
-	}
-}
-
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 768px) {
 
 	.toptabdescription {
 		p {
@@ -401,7 +408,7 @@ footer {
 	}
 
 	.feature-title {
-		margin: 15px 0 0 0;
+		margin: 0;
 
 	}
 
