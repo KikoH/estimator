@@ -18,7 +18,6 @@ form(:html => { :multipart => true }) do |f|
       f.input :image, :as => :file
       f.input :developer_days
       f.input :designer_days
-      f.input :name
     end
     f.actions
   end
