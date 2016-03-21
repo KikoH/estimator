@@ -250,6 +250,16 @@ footer {
 
 	.feature-container {
 		font-size: 0.8em;
+
+		p {
+			min-height: 40px;
+			margin: 0;
+		}
+
+		h4 {
+			min-height: 40px;
+			margin: 0;
+		}
 	}
 }
 
