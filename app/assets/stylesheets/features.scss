@@ -8,6 +8,14 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
+h4 {
+	min-height: 40px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+}
+
 #main-container {
 	width: 95%;
 	margin: auto;
@@ -264,14 +272,6 @@ footer {
 		p {
 			min-height: 40px;
 			margin: 0;
-		}
-
-		h4 {
-			min-height: 40px;
-			margin: 0;
-			font-size: 14px;
-			font-weight: normal;
-			line-height: 18px;
 		}
 	}
 }
