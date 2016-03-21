@@ -9,11 +9,8 @@ body {
 }
 
 h4 {
-	min-height: 40px;
-	margin: 0;
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 18px;
+	font-weight: 700;
+	font-size: 1.4em;
 }
 
 #main-container {
@@ -60,6 +57,14 @@ h4 {
 	background: white;
 	text-align: center;
 	margin-bottom: 60px;
+
+	h4 {
+		min-height: 40px;
+		margin: 0;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 18px;
+	}
 }
 
 .toptab {
@@ -147,7 +152,7 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 }
 
 .bottom-web{
-	padding: 70px 10px !important;
+	padding: 30px !important;
 }
 
 .web-bottom-tab-info, .ios-bottom-tab-info, .android-bottom-tab-info{
@@ -155,7 +160,7 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 }
 
 .bottom-ios{
-	padding: 70px 10px !important;
+	padding: 30px !important;
 }
 
 .bottom-ios-after {
@@ -167,7 +172,7 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 }
 
 .bottom-android{
-	padding: 70px 10px !important;
+	padding: 30px !important;
 }
 
 .bottom-android-after {
