@@ -159,6 +159,10 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 	text-align: left;
 }
 
+.web-bottom-tab, .ios-bottom-tab, .android-bottom-tab {
+	padding: 30px;
+}
+
 .bottom-ios{
 	padding: 30px !important;
 }
@@ -193,6 +197,10 @@ a.android, a.android:focus, a.android:hover, .android, .bottom-android {
 .fa-fw {
 	width: 2em;
 	text-align: center;
+}
+
+.fa {
+	font-size: 2em !important;
 }
 
 .isSelected {
